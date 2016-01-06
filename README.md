@@ -1,6 +1,7 @@
 # lints
 
-[![Travis CI build status](https://img.shields.io/travis/EvgenyOrekhov/lints.svg?style=flat-square)](https://travis-ci.org/EvgenyOrekhov/lints)
+[![Travis CI build status](https://img.shields.io/travis/EvgenyOrekhov/lints/master.svg?style=flat-square)](https://travis-ci.org/EvgenyOrekhov/lints)
+[![Codacy grade](https://img.shields.io/codacy/757146806ea6467e9ecdd1cd2873ec60/master.svg?style=flat-square)](https://www.codacy.com/app/EvgenyOrekhov/lints)
 
 ## Gain the power of static code analysis with a single command
 lints comes with:
@@ -38,6 +39,12 @@ You can see the default config in
 
 To customize an individual linter create a respective rc file in the root of
 your project.
+
+# Compatibility
+lints is compatible with the latest stable Node.js.
+
+You can check whether it is compatible with Node.js 4.0 on the
+[Travis CI page](https://travis-ci.org/EvgenyOrekhov/lints)
 
 # License
 [MIT](LICENSE)

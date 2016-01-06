@@ -27,6 +27,8 @@ The names of the functions should start with a verb: `function doSomething() {`.
 The names of the variables and constants should not contain verbs:
 `const someConstant`.
 
+Prefer `const` over `var`/`let`.
+
 Use double quotes for strings that make sense outside of the program:
 error messages, urls, html fragments, etc.
 
