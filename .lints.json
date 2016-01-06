@@ -1,0 +1,44 @@
+{
+    "jslint": {
+        "files": [
+            "**/*.js",
+            "**/*.json",
+            "**/.*.json"
+        ],
+        "ignore": [
+            "node_modules/**",
+            "**/*.min.js"
+        ],
+        "rcFile": ".jslintrc"
+    },
+    "csslint": {
+        "files": [
+            "**/*.css"
+        ],
+        "ignore": [
+            "node_modules/**",
+            "**/*.min.css"
+        ],
+        "rcFile": ".csslintrc"
+    },
+    "htmlhint": {
+        "files": [
+            "**/*.html",
+            "**/*.htm"
+        ],
+        "ignore": [
+            "node_modules/**"
+        ],
+        "rcFile": ".htmlhintrc"
+    },
+    "w3cjs": {
+        "files": [
+            "**/*.html",
+            "**/*.htm"
+        ],
+        "ignore": [
+            "node_modules/**"
+        ],
+        "rcFile": null
+    }
+}

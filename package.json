@@ -1,0 +1,54 @@
+{
+  "name": "lints",
+  "version": "1.0.0",
+  "description": "Lint all your JavaScript, CSS and HTML with a single command",
+  "keywords": [
+    "lint",
+    "linter",
+    "static code analysis",
+    "analysis",
+    "analyser",
+    "checker",
+    "validation",
+    "validator",
+    "jslint",
+    "jshint",
+    "eslint",
+    "csslint",
+    "htmlhint",
+    "w3cjs",
+    "w3c",
+    "javascript",
+    "js",
+    "css",
+    "html"
+  ],
+  "scripts": {
+    "test": "./bin/lints"
+  },
+  "bin": {
+    "lints": "./bin/lints"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgenyOrekhov/lints.git"
+  },
+  "author": {
+    "name": "Evgeny Orekhov",
+    "url": "https://plus.google.com/+ЕвгенийОрехов"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvgenyOrekhov/lints/issues"
+  },
+  "homepage": "https://github.com/EvgenyOrekhov/lints#readme",
+  "dependencies": {
+    "csslint": "^0.10.0",
+    "eslint": "^1.10.3",
+    "glob": "^6.0.3",
+    "htmlhint": "^0.9.12",
+    "jshint": "^2.9.1-rc2",
+    "jslinter": "^0.1.20151218",
+    "w3cjs": "^0.3.0"
+  }
+}
