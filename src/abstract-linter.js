@@ -28,9 +28,9 @@ function parseGlobsAndLintFiles(settings) {
                     throw err;
                 }
                 settings.lintAndLogWarnings({
-                    data: data,
-                    options: options,
-                    logWarnings: logWarnings
+                    data,
+                    options,
+                    logWarnings
                 });
             }
 
