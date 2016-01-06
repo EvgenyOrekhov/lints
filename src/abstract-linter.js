@@ -23,9 +23,9 @@ function parseGlobsAndLintFiles(settings) {
                 warnings.forEach(settings.logWarning || console.log);
             }
 
-            function lintFile(err, data) {
-                if (err) {
-                    throw err;
+            function lintFile(error, data) {
+                if (error) {
+                    throw error;
                 }
                 settings.lintAndLogWarnings({
                     data,
@@ -37,9 +37,9 @@ function parseGlobsAndLintFiles(settings) {
             fs.readFile(file, 'utf8', lintFile);
         }
 
-        function readAndLintFiles(err, files) {
-            if (err) {
-                throw err;
+        function readAndLintFiles(error, files) {
+            if (error) {
+                throw error;
             }
             files.forEach(readAndLintFile);
         }
