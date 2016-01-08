@@ -1,4 +1,5 @@
 /*jslint es6, node, maxlen: 80 */
+/*eslint global-require: 0 */
 
 'use strict';
 

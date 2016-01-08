@@ -11,6 +11,16 @@
         ],
         "rcFile": ".jslintrc"
     },
+    "eslint": {
+        "files": [
+            "**/*.js"
+        ],
+        "ignore": [
+            "node_modules/**",
+            "**/*.min.js"
+        ],
+        "rcFile": ".eslintrc.json"
+    },
     "csslint": {
         "files": [
             "**/*.css"
