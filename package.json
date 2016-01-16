@@ -45,10 +45,10 @@
   "dependencies": {
     "csslint": "^0.10.0",
     "eslint": "^1.10.3",
-    "glob": "^6.0.3",
+    "glob": "^6.0.4",
     "htmlhint": "^0.9.12",
-    "jshint": "^2.9.1-rc2",
-    "jslinter": "^0.1.20151218",
+    "jshint": "^2.9.1",
+    "jslinter": "^0.2.20160114",
     "w3cjs": "^0.3.0"
   }
 }
