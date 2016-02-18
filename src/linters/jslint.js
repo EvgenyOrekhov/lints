@@ -3,7 +3,7 @@
 'use strict';
 
 const abstractLinter = require('../abstract-linter.js');
-const jslinter = require('jslinter');
+const jslinter = require('jslinter').jslint;
 
 function lintAndLogWarnings(settings) {
     const warnings = jslinter(settings.data, settings.options).warnings;
