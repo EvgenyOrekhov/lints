@@ -44,7 +44,7 @@
   "homepage": "https://github.com/EvgenyOrekhov/lints#readme",
   "dependencies": {
     "csslint": "^0.10.0",
-    "eslint": "^2.1.0",
+    "eslint": "^2.2.0",
     "glob": "^7.0.0",
     "htmlhint": "^0.9.12",
     "jshint": "^2.9.1",
