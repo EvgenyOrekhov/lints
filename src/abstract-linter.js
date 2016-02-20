@@ -4,15 +4,16 @@
 
 const fs = require('fs');
 const glob = require('glob');
+const Bluebird = require('bluebird');
+
+const globAsync = Bluebird.promisify(glob);
+
+function throwError(err) {
+    throw err;
+}
 
 function parseGlobsAndLintFiles(settings) {
-    const globs = settings.files || [];
-
-    function parseOptionsAndLint(err, optionsAsData) {
-        const options = err
-            ? undefined
-            : JSON.parse(optionsAsData);
-
+    function lintFiles(options) {
         function readAndLintFile(file) {
             function logWarnings(warnings) {
                 if (warnings.length > 0) {
@@ -23,10 +24,7 @@ function parseGlobsAndLintFiles(settings) {
                 warnings.forEach(settings.logWarning || console.log);
             }
 
-            function lintFile(error, data) {
-                if (error) {
-                    throw error;
-                }
+            function lintFile(data) {
                 settings.lintAndLogWarnings({
                     data,
                     options,
@@ -34,34 +32,32 @@ function parseGlobsAndLintFiles(settings) {
                 });
             }
 
-            fs.readFile(file, 'utf8', lintFile);
+            fs
+                .readFileAsync(file, 'utf8')
+                .then(lintFile)
+                .catch(throwError);
         }
 
-        function readAndLintFiles(error, files) {
-            if (error) {
-                throw error;
-            }
-            files.forEach(readAndLintFile);
+        function parseGlob(globPattern) {
+            return globAsync(globPattern, {ignore: settings.ignore});
         }
 
-        function parseGlobAndLintFiles(globPattern) {
-            glob(
-                globPattern,
-                {
-                    ignore: settings.ignore
-                },
-                readAndLintFiles
-            );
-        }
+        const globs = settings.files || [];
 
-        globs.forEach(parseGlobAndLintFiles);
+        Bluebird
+            .map(globs, parseGlob)
+            .reduce((allFiles, files) => allFiles.concat(files), [])
+            .each(readAndLintFile)
+            .catch(throwError);
     }
 
-    if (settings.rcFile) {
-        return fs.readFile(settings.rcFile, 'utf8', parseOptionsAndLint);
-    }
-
-    parseOptionsAndLint(true);
+    fs
+        .readFileAsync(settings.rcFile, 'utf8')
+        .then(JSON.parse)
+        .then(lintFiles)
+        .catch(() => lintFiles());
 }
+
+Bluebird.promisifyAll(fs);
 
 module.exports = parseGlobsAndLintFiles;

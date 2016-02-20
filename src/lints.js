@@ -4,12 +4,9 @@
 'use strict';
 
 const fs = require('fs');
+const Bluebird = require('bluebird');
 
-function requireAndRunLinters(err, data) {
-    const config = err
-        ? require('./default.lints.json')
-        : JSON.parse(data);
-
+function requireAndRunLinters(config) {
     function requireAndRunLinter(linterName) {
         const linter = require(`./linters/${linterName}.js`);
 
@@ -19,4 +16,10 @@ function requireAndRunLinters(err, data) {
     Object.keys(config).forEach(requireAndRunLinter);
 }
 
-fs.readFile(`${process.cwd()}/.lints.json`, 'utf8', requireAndRunLinters);
+Bluebird.promisifyAll(fs);
+
+fs
+    .readFileAsync(`${process.cwd()}/.lints.json`, 'utf8')
+    .then(JSON.parse)
+    .catch(() => require('./default.lints.json'))
+    .then(requireAndRunLinters);
