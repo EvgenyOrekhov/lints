@@ -211,6 +211,12 @@
         "one-var-declaration-per-line": 2,
         "id-blacklist": 0,
         "sort-imports": 0,
-        "yield-star-spacing": 0
+        "yield-star-spacing": 0,
+        "newline-before-return": 2,
+        "no-useless-escape": 2,
+        "max-statements-per-line": 2,
+        "no-duplicate-imports": 2,
+        "no-unsafe-finally": 2,
+        "no-useless-computed-key": 2
     }
 }
