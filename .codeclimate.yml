@@ -1,17 +1,26 @@
----
-engines:
-    csslint:
-        enabled: true
-    fixme:
-        enabled: true
-    duplication:
-        enabled: true
-        config:
-            languages:
-            - javascript
-ratings:
-    paths:
-    - "**.css"
-    - "**.js"
-    - "**.jsx"
-exclude_paths: []
+{
+    "engines": {
+        "csslint": {
+            "enabled": true
+        },
+        "fixme": {
+            "enabled": true
+        },
+        "duplication": {
+            "enabled": true,
+            "config": {
+                "languages": [
+                    "javascript"
+                ]
+            }
+        }
+    },
+    "ratings": {
+        "paths": [
+            "**.css",
+            "**.js",
+            "**.jsx"
+        ]
+    },
+    "exclude_paths": []
+}
