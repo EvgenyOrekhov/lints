@@ -41,7 +41,7 @@ To customize an individual linter create a respective rc file in the root of
 your project.
 
 # Compatibility
-lints is compatible with the latest stable Node.js.
+lints is compatible with the "Current" version of Node.js.
 
 You can check whether it is compatible with Node.js 4.0 on the
 [Travis CI page](https://travis-ci.org/EvgenyOrekhov/lints)
