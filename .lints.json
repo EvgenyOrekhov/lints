@@ -3,7 +3,11 @@
         "files": [
             "**/*.js",
             "**/*.json",
-            "**/.*.json"
+            "**/.*.json",
+            "**/*.yaml",
+            "**/.*.yaml",
+            "**/*.yml",
+            "**/.*.yml"
         ],
         "ignore": [
             "node_modules/**",
