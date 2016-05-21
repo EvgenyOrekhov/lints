@@ -217,6 +217,7 @@
         "max-statements-per-line": 2,
         "no-duplicate-imports": 2,
         "no-unsafe-finally": 2,
-        "no-useless-computed-key": 2
+        "no-useless-computed-key": 2,
+        "object-property-newline": 2
     }
 }
