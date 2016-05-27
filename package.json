@@ -45,11 +45,11 @@
   "dependencies": {
     "bluebird": "^3.4.0",
     "csslint": "^0.10.0",
-    "eslint": "^2.10.2",
+    "eslint": "^2.11.0",
     "glob": "^7.0.3",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.2",
-    "jslinter": "^1.2.12",
+    "jslinter": "^1.2.16",
     "w3cjs": "^0.3.0"
   }
 }
