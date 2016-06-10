@@ -221,6 +221,10 @@
         "object-property-newline": 2,
         "no-useless-rename": 2,
         "unicode-bom": 2,
-        "no-prototype-builtins": 0
+        "no-prototype-builtins": 0,
+        "no-mixed-operators": 0,
+        "rest-spread-spacing": 2,
+        "max-lines": 2,
+        "object-curly-newline": 0
     }
 }
