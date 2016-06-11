@@ -1,9 +1,9 @@
 /*jslint es6, node, maxlen: 80 */
 
-'use strict';
+"use strict";
 
-const abstractLinter = require('../abstract-linter.js');
-const csslint = require('csslint').CSSLint;
+const abstractLinter = require("../abstract-linter.js");
+const csslint = require("csslint").CSSLint;
 
 function lintAndLogWarnings(settings) {
     const warnings = csslint.verify(settings.data, settings.options).messages;

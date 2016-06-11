@@ -29,12 +29,6 @@ The names of the variables and constants should not contain verbs:
 
 Prefer `const` over `var`/`let`.
 
-Use double quotes for strings that make sense outside of the program:
-error messages, urls, html fragments, etc.
-
-Use single quotes for strings that only make sense to the program:
-symbols, property names, character constants, etc.
-
 A line should not exceed the 80-character limit.
 
 There must be exactly one blank line at the end of every text file.

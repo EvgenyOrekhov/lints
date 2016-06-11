@@ -1,14 +1,14 @@
 /*jslint es6, node, maxlen: 80 */
 
-'use strict';
+"use strict";
 
-const abstractLinter = require('../abstract-linter.js');
-const w3cjs = require('w3cjs');
+const abstractLinter = require("../abstract-linter.js");
+const w3cjs = require("w3cjs");
 
 function lintAndLogWarnings(settings) {
     function filterAndLogWarnings(result) {
         const warnings = result.messages.filter(
-            (message) => message.type === 'error'
+            (message) => message.type === "error"
         );
 
         settings.logWarnings(warnings);

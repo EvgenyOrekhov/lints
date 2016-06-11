@@ -1,9 +1,9 @@
 /*jslint es6, node, maxlen: 80 */
 
-'use strict';
+"use strict";
 
-const abstractLinter = require('../abstract-linter.js');
-const htmlhint = require('htmlhint').HTMLHint;
+const abstractLinter = require("../abstract-linter.js");
+const htmlhint = require("htmlhint").HTMLHint;
 
 function lintAndLogWarnings(settings) {
     const warnings = htmlhint.verify(settings.data, settings.options);

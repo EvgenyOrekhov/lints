@@ -1,9 +1,9 @@
 /*jslint es6, node, maxlen: 80 */
 
-'use strict';
+"use strict";
 
-const abstractLinter = require('../abstract-linter.js');
-const jshint = require('jshint').JSHINT;
+const abstractLinter = require("../abstract-linter.js");
+const jshint = require("jshint").JSHINT;
 
 function lintAndLogWarnings(settings) {
     jshint(settings.data, settings.options);

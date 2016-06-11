@@ -1,10 +1,10 @@
 /*jslint es6, node, maxlen: 80 */
 
-'use strict';
+"use strict";
 
-const fs = require('fs');
-const glob = require('glob');
-const Bluebird = require('bluebird');
+const fs = require("fs");
+const glob = require("glob");
+const Bluebird = require("bluebird");
 
 const globAsync = Bluebird.promisify(glob);
 
@@ -33,7 +33,7 @@ function parseGlobsAndLintFiles(settings) {
             }
 
             fs
-                .readFileAsync(file, 'utf8')
+                .readFileAsync(file, "utf8")
                 .then(lintFile)
                 .catch(throwError);
         }
@@ -52,7 +52,7 @@ function parseGlobsAndLintFiles(settings) {
     }
 
     fs
-        .readFileAsync(settings.rcFile, 'utf8')
+        .readFileAsync(settings.rcFile, "utf8")
         .then(JSON.parse)
         .then(lintFiles)
         .catch(() => lintFiles());
