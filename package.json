@@ -1,6 +1,6 @@
 {
   "name": "lints",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Lint all your JavaScript, CSS and HTML with a single command",
   "keywords": [
     "lint",
@@ -45,7 +45,7 @@
   "dependencies": {
     "bluebird": "^3.4.1",
     "csslint": "^0.10.0",
-    "eslint": "^2.13.1",
+    "eslint": "^3.0.0",
     "glob": "^7.0.5",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.2",
