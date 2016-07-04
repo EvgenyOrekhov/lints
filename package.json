@@ -43,13 +43,13 @@
   },
   "homepage": "https://github.com/EvgenyOrekhov/lints#readme",
   "dependencies": {
-    "bluebird": "^3.4.0",
+    "bluebird": "^3.4.1",
     "csslint": "^0.10.0",
-    "eslint": "^2.12.0",
-    "glob": "^7.0.3",
+    "eslint": "^2.13.1",
+    "glob": "^7.0.5",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.2",
-    "jslinter": "^1.4.0",
+    "jslinter": "^1.4.4",
     "w3cjs": "^0.3.0"
   }
 }
