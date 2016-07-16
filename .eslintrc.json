@@ -225,6 +225,7 @@
         "no-mixed-operators": 0,
         "rest-spread-spacing": 2,
         "max-lines": 2,
-        "object-curly-newline": 0
+        "object-curly-newline": 0,
+        "multiline-ternary": 2
     }
 }
