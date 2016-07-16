@@ -10,7 +10,7 @@ lints comes with:
 problems in your JavaScript code
 - [ESLint](http://eslint.org) - a fully pluggable tool for identifying and
 reporting on patterns in JavaScript
-- [CSS Lint](http://csslint.net) - automated linting of Cascading Stylesheets
+- [CSSLint](http://csslint.net) - automated linting of Cascading Stylesheets
 - [HTMLHint](http://htmlhint.com) - a Static Code Analysis Tool for HTML
 - [w3cjs](http://thomasdavis.github.com/w3cjs/) - a npm package for testing
 files or url's again the wc3 validator
