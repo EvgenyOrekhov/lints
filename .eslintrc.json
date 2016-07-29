@@ -226,6 +226,7 @@
         "rest-spread-spacing": 2,
         "max-lines": 2,
         "object-curly-newline": 0,
-        "multiline-ternary": 2
+        "multiline-ternary": 2,
+        "no-tabs": 2
     }
 }
