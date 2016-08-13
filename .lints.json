@@ -35,6 +35,19 @@
         ],
         "rcFile": ".csslintrc"
     },
+    "stylelint": {
+        "files": [
+            "**/*.css",
+            "**/*.scss",
+            "**/*.less",
+            "**/*.sss"
+        ],
+        "ignore": [
+            "node_modules/**",
+            "**/*.min.css"
+        ],
+        "rcFile": ".stylelintrc"
+    },
     "htmlhint": {
         "files": [
             "**/*.html",

@@ -26,6 +26,7 @@ function parseGlobsAndLintFiles(settings) {
 
             function lintFile(data) {
                 settings.lintAndLogWarnings({
+                    file,
                     data,
                     options,
                     logWarnings
