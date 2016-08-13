@@ -49,7 +49,7 @@
     "glob": "^7.0.5",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.2",
-    "jslinter": "^1.5.1",
+    "jslinter": "^1.5.2",
     "stylelint": "^7.1.0",
     "stylelint-config-standard": "^12.0.0",
     "w3cjs": "^0.3.0"
