@@ -6,6 +6,9 @@ const abstractLinter = require("../abstract-linter.js");
 const stylelint = require("stylelint");
 
 function throwError(err) {
+    process.exitCode = 1;
+    console.error(err);
+
     throw err;
 }
 

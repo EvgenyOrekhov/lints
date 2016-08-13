@@ -9,6 +9,9 @@ const Bluebird = require("bluebird");
 const globAsync = Bluebird.promisify(glob);
 
 function throwError(err) {
+    process.exitCode = 1;
+    console.error(err);
+
     throw err;
 }
 
