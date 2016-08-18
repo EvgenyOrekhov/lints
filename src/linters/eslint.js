@@ -8,7 +8,11 @@ const eslint = require("eslint").linter;
 const linterName = "ESLint";
 
 function lintAndLogWarnings(settings) {
-    const warnings = eslint.verify(settings.data, settings.options);
+    const options = settings.options === undefined
+        ? {"extends": "eslint:recommended"}
+        : settings.options;
+
+    const warnings = eslint.verify(settings.data, options);
 
     settings.logWarnings(warnings);
 }
