@@ -13,8 +13,8 @@ reporting on patterns in JavaScript
 - [CSSLint](http://csslint.net) - automated linting of Cascading Stylesheets
 - [stylelint](http://stylelint.io) - a mighty, modern CSS linter
 - [HTMLHint](http://htmlhint.com) - a Static Code Analysis Tool for HTML
-- [w3cjs](http://thomasdavis.github.com/w3cjs/) - a npm package for testing
-files or url's again the wc3 validator
+- [w3cjs](http://thomasdavis.github.com/w3cjs/) - a node.js library for testing
+files or url's against the w3c html validator
 
 # Quick start
 Install: `npm install lints -g`
