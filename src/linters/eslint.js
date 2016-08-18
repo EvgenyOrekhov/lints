@@ -5,6 +5,8 @@
 const abstractLinter = require("../abstract-linter.js");
 const eslint = require("eslint").linter;
 
+const linterName = "ESLint";
+
 function lintAndLogWarnings(settings) {
     const warnings = eslint.verify(settings.data, settings.options);
 
@@ -21,7 +23,7 @@ function lint(config) {
 
     settings.lintAndLogWarnings = lintAndLogWarnings;
     settings.logWarning = logWarning;
-    console.log("Running ESLint...");
+    settings.linterName = linterName;
     abstractLinter(settings);
 }
 

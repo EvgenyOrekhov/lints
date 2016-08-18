@@ -5,6 +5,8 @@
 const abstractLinter = require("../abstract-linter.js");
 const htmlhint = require("htmlhint").HTMLHint;
 
+const linterName = "HTMLHint";
+
 function lintAndLogWarnings(settings) {
     const warnings = htmlhint.verify(settings.data, settings.options);
 
@@ -21,7 +23,7 @@ function lint(config) {
 
     settings.lintAndLogWarnings = lintAndLogWarnings;
     settings.logWarning = logWarning;
-    console.log("Running HTMLHint...");
+    settings.linterName = linterName;
     abstractLinter(settings);
 }
 

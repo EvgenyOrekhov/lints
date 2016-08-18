@@ -21,7 +21,7 @@ function parseGlobsAndLintFiles(settings) {
             function logWarnings(warnings) {
                 if (warnings.length > 0) {
                     console.log();
-                    console.log(file);
+                    console.log(`${file} (${settings.linterName})`);
                     process.exitCode = 1;
                 }
                 warnings.forEach(settings.logWarning || console.log);
@@ -47,6 +47,8 @@ function parseGlobsAndLintFiles(settings) {
         }
 
         const globs = settings.files || [];
+
+        console.log(`Running ${settings.linterName}...`);
 
         Bluebird
             .map(globs, parseGlob)

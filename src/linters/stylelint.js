@@ -5,6 +5,8 @@
 const abstractLinter = require("../abstract-linter.js");
 const stylelint = require("stylelint");
 
+const linterName = "stylelint";
+
 function throwError(err) {
     process.exitCode = 1;
     console.error(err);
@@ -41,7 +43,7 @@ function lint(config) {
 
     settings.lintAndLogWarnings = lintAndLogWarnings;
     settings.logWarning = logWarning;
-    console.log("Running stylelint...");
+    settings.linterName = linterName;
     abstractLinter(settings);
 }
 

@@ -5,6 +5,8 @@
 const abstractLinter = require("../abstract-linter.js");
 const jslinter = require("jslinter").jslint;
 
+const linterName = "JSLint";
+
 function lintAndLogWarnings(settings) {
     const warnings = jslinter(settings.data, settings.options).warnings;
 
@@ -21,7 +23,7 @@ function lint(config) {
 
     settings.lintAndLogWarnings = lintAndLogWarnings;
     settings.logWarning = logWarning;
-    console.log("Running JSLint...");
+    settings.linterName = linterName;
     abstractLinter(settings);
 }
 

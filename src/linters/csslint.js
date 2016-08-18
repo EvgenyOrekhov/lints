@@ -5,6 +5,8 @@
 const abstractLinter = require("../abstract-linter.js");
 const csslint = require("csslint").CSSLint;
 
+const linterName = "CSSLint";
+
 function lintAndLogWarnings(settings) {
     const warnings = csslint.verify(settings.data, settings.options).messages;
 
@@ -21,7 +23,7 @@ function lint(config) {
 
     settings.lintAndLogWarnings = lintAndLogWarnings;
     settings.logWarning = logWarning;
-    console.log("Running CSS Lint...");
+    settings.linterName = linterName;
     abstractLinter(settings);
 }
 

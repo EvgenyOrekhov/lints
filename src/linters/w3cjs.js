@@ -5,6 +5,8 @@
 const abstractLinter = require("../abstract-linter.js");
 const w3cjs = require("w3cjs");
 
+const linterName = "w3cjs";
+
 function lintAndLogWarnings(settings) {
     function filterAndLogWarnings(result) {
         const warnings = result.messages.filter(
@@ -29,7 +31,7 @@ function lint(config) {
 
     settings.lintAndLogWarnings = lintAndLogWarnings;
     settings.logWarning = logWarning;
-    console.log("Running w3cjs...");
+    settings.linterName = linterName;
     abstractLinter(settings);
 }
 
