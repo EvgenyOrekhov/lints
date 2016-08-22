@@ -8,11 +8,9 @@ const Bluebird = require("bluebird");
 
 const globAsync = Bluebird.promisify(glob);
 
-function throwError(err) {
+function logError(err) {
     process.exitCode = 1;
     console.error(err);
-
-    throw err;
 }
 
 function parseGlobsAndLintFiles(settings) {
@@ -28,7 +26,7 @@ function parseGlobsAndLintFiles(settings) {
             }
 
             function lintFile(data) {
-                settings.lintAndLogWarnings({
+                return settings.lintAndLogWarnings({
                     file,
                     data,
                     options,
@@ -36,10 +34,10 @@ function parseGlobsAndLintFiles(settings) {
                 });
             }
 
-            fs
+            return fs
                 .readFileAsync(file, "utf8")
                 .then(lintFile)
-                .catch(throwError);
+                .catch(logError);
         }
 
         function parseGlob(globPattern) {
@@ -50,18 +48,17 @@ function parseGlobsAndLintFiles(settings) {
 
         console.log(`Running ${settings.linterName}...`);
 
-        Bluebird
+        return Bluebird
             .map(globs, parseGlob)
             .reduce((allFiles, files) => allFiles.concat(files), [])
             .each(readAndLintFile)
-            .catch(throwError);
+            .catch(logError);
     }
 
-    fs
+    return fs
         .readFileAsync(settings.rcFile, "utf8")
         .then(JSON.parse)
-        .then(lintFiles)
-        .catch(() => lintFiles());
+        .then(lintFiles, () => lintFiles());
 }
 
 Bluebird.promisifyAll(fs);

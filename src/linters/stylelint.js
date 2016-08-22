@@ -7,13 +7,6 @@ const stylelint = require("stylelint");
 
 const linterName = "stylelint";
 
-function throwError(err) {
-    process.exitCode = 1;
-    console.error(err);
-
-    throw err;
-}
-
 function lintAndLogWarnings(settings) {
     function logWarnings(result) {
         settings.logWarnings(result.results[0].warnings);
@@ -23,14 +16,13 @@ function lintAndLogWarnings(settings) {
         ? {"extends": "stylelint-config-standard"}
         : settings.options;
 
-    stylelint
+    return stylelint
         .lint({
             code: settings.data,
             codeFilename: settings.file,
             config: options
         })
-        .then(logWarnings)
-        .catch(throwError);
+        .then(logWarnings);
 }
 
 function logWarning(warning) {
