@@ -1,6 +1,6 @@
 {
     "parserOptions": {
-        "ecmaVersion": 6
+        "ecmaVersion": 2015
     },
     "env": {
         "node": true,
@@ -229,6 +229,8 @@
         "multiline-ternary": 2,
         "no-tabs": 2,
         "sort-keys": 0,
-        "no-template-curly-in-string": 2
+        "no-template-curly-in-string": 2,
+        "symbol-description": 2,
+        "class-methods-use-this": 0
     }
 }
