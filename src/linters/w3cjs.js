@@ -32,7 +32,8 @@ function lint(config) {
     settings.lintAndLogWarnings = lintAndLogWarnings;
     settings.logWarning = logWarning;
     settings.linterName = linterName;
-    abstractLinter(settings);
+
+    return abstractLinter(settings);
 }
 
 module.exports = lint;
