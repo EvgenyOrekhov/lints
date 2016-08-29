@@ -41,7 +41,10 @@ function parseGlobsAndLintFiles(settings) {
         }
 
         function parseGlob(globPattern) {
-            return globAsync(globPattern, {ignore: settings.ignore});
+            return globAsync(globPattern, {
+                ignore: settings.ignore,
+                nodir: true
+            });
         }
 
         const globs = settings.files || [];
