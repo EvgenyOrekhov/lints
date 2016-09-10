@@ -57,5 +57,8 @@
   "files": [
     "bin/",
     "src/"
-  ]
+  ],
+  "devDependencies": {
+    "eslint-config-hardcore": "^0.0.3"
+  }
 }
