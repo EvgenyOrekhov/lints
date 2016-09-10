@@ -15,7 +15,7 @@ function lintAndLogWarnings(settings) {
 
 function logWarning(warning) {
     console.log(`    line ${warning.line} column ${warning.col}
-        ${warning.message}`);
+        ${warning.message} (${warning.rule.id})`);
 }
 
 function lint(config) {
