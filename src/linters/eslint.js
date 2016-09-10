@@ -3,7 +3,7 @@
 "use strict";
 
 const abstractLinter = require("../abstract-linter.js");
-const eslint = require("eslint").linter;
+const CLIEngine = require("eslint").CLIEngine;
 
 const linterName = "ESLint";
 
@@ -12,7 +12,12 @@ function lintAndLogWarnings(settings) {
         ? {"extends": "eslint:recommended"}
         : settings.options;
 
-    const warnings = eslint.verify(settings.data, options);
+    const cliEngine = new CLIEngine({
+        baseConfig: options,
+        useEslintrc: false
+    });
+
+    const warnings = cliEngine.executeOnText(settings.data).results[0].messages;
 
     settings.logWarnings(warnings);
 }
