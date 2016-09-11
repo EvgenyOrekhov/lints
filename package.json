@@ -59,6 +59,6 @@
     "src/"
   ],
   "devDependencies": {
-    "eslint-config-hardcore": "^1.0.1"
+    "eslint-config-hardcore": "^1.0.2"
   }
 }
