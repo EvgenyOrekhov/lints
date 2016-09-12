@@ -19,11 +19,11 @@ function logWarning(warning) {
 }
 
 function lint(config) {
-    const settings = config || {};
-
-    settings.lintAndLogWarnings = lintAndLogWarnings;
-    settings.logWarning = logWarning;
-    settings.linterName = linterName;
+    const settings = Object.assign({}, config, {
+        lintAndLogWarnings,
+        logWarning,
+        linterName
+    });
 
     return abstractLinter(settings);
 }

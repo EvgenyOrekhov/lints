@@ -6,6 +6,11 @@
 const fs = require("fs");
 const Bluebird = require("bluebird");
 
+function logError(err) {
+    process.exitCode = 1;
+    console.error(err);
+}
+
 function requireAndRunLinters(config) {
     function requireAndRunLinter(linterName) {
         const linter = require(`./linters/${linterName}.js`);
@@ -22,4 +27,5 @@ fs
     .readFileAsync(`${process.cwd()}/.lints.json`, "utf8")
     .then(JSON.parse)
     .catch(() => require("./default.lints.json"))
-    .then(requireAndRunLinters);
+    .then(requireAndRunLinters)
+    .catch(logError);

@@ -36,8 +36,7 @@ function parseGlobsAndLintFiles(settings) {
 
             return fs
                 .readFileAsync(file, "utf8")
-                .then(lintFile)
-                .catch(logError);
+                .then(lintFile);
         }
 
         function parseGlob(globPattern) {
