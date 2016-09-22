@@ -44,14 +44,14 @@
   "homepage": "https://github.com/EvgenyOrekhov/lints#readme",
   "dependencies": {
     "bluebird": "^3.4.6",
-    "csslint": "^1.0.2",
+    "csslint": "^1.0.3",
     "eslint": "^3.5.0",
-    "glob": "^7.0.6",
+    "glob": "^7.1.0",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.3",
     "jslinter": "^1.5.5",
-    "stylelint": "^7.2.0",
-    "stylelint-config-standard": "^13.0.0",
+    "stylelint": "^7.3.1",
+    "stylelint-config-standard": "^13.0.2",
     "w3cjs": "^0.3.0"
   },
   "files": [
