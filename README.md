@@ -15,6 +15,7 @@ reporting on patterns in JavaScript
 - [HTMLHint](http://htmlhint.com) - a Static Code Analysis Tool for HTML
 - [w3cjs](http://thomasdavis.github.com/w3cjs/) - a node.js library for testing
 files or url's against the w3c html validator
+- [Bootlint](http://www.bootlint.com) - an HTML linter for Bootstrap projects
 
 # Quick start
 Install: `npm install lints -g`

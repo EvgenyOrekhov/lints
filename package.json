@@ -1,6 +1,6 @@
 {
   "name": "lints",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "Lint all your JavaScript, CSS and HTML with a single command",
   "keywords": [
     "lint",
@@ -44,6 +44,7 @@
   "homepage": "https://github.com/EvgenyOrekhov/lints#readme",
   "dependencies": {
     "bluebird": "^3.4.6",
+    "bootlint": "^0.14.2",
     "csslint": "^1.0.3",
     "eslint": "^3.5.0",
     "glob": "^7.1.0",

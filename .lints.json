@@ -67,5 +67,15 @@
             "node_modules/**"
         ],
         "rcFile": null
+    },
+    "bootlint": {
+        "files": [
+            "**/*.html",
+            "**/*.htm"
+        ],
+        "ignore": [
+            "node_modules/**"
+        ],
+        "rcFile": ".bootlintrc.json"
     }
 }
