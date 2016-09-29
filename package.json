@@ -46,7 +46,7 @@
     "bluebird": "^3.4.6",
     "bootlint": "^0.14.2",
     "csslint": "^1.0.3",
-    "eslint": "^3.6.0",
+    "eslint": "^3.6.1",
     "glob": "^7.1.0",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.3",
