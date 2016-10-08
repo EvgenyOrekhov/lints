@@ -46,8 +46,8 @@
     "bluebird": "^3.4.6",
     "bootlint": "^0.14.2",
     "csslint": "^1.0.3",
-    "eslint": "^3.7.0",
-    "glob": "^7.1.0",
+    "eslint": "^3.7.1",
+    "glob": "^7.1.1",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.3",
     "jslinter": "^1.5.5",
@@ -62,6 +62,6 @@
   "devDependencies": {
     "eslint-config-hardcore": "^1.0.3",
     "eslint-plugin-fp": "^2.2.0",
-    "eslint-plugin-promise": "^2.0.1"
+    "eslint-plugin-promise": "^3.0.0"
   }
 }
