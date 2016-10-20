@@ -13,7 +13,10 @@
         "promise/param-names": "error",
         "promise/always-return": "error",
         "promise/catch-or-return": "error",
+        "promise/no-return-wrap": "error",
         "promise/no-native": "off",
+        "promise/prefer-await-to-then": "off",
+        "promise/prefer-await-to-callbacks": "off",
 
         "fp/no-arguments": "error",
         "fp/no-class": "error",

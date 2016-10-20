@@ -46,12 +46,12 @@
     "bluebird": "^3.4.6",
     "bootlint": "^0.14.2",
     "csslint": "^1.0.3",
-    "eslint": "^3.8.0",
+    "eslint": "^3.8.1",
     "glob": "^7.1.1",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.3",
     "jslinter": "^1.5.7",
-    "stylelint": "^7.4.2",
+    "stylelint": "^7.5.0",
     "stylelint-config-standard": "^13.0.2",
     "w3cjs": "^0.3.0"
   },
@@ -62,6 +62,6 @@
   "devDependencies": {
     "eslint-config-hardcore": "^1.2.0",
     "eslint-plugin-fp": "^2.2.0",
-    "eslint-plugin-promise": "^3.0.0"
+    "eslint-plugin-promise": "^3.3.0"
   }
 }
