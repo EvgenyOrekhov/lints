@@ -1,6 +1,6 @@
 {
   "name": "lints",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "description": "Lint all your JavaScript, CSS and HTML with a single command",
   "keywords": [
     "lint",
