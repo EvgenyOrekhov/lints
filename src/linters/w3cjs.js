@@ -23,7 +23,8 @@ function lintAndLogWarnings(settings) {
 }
 
 function logWarning(warning) {
-    console.log(warning);
+    console.log(`    line ${warning.lastLine} column ${warning.lastColumn}
+        ${warning.message}`);
 }
 
 function lint(config) {
