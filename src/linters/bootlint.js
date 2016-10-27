@@ -25,7 +25,17 @@ function lintAndLogWarnings(settings) {
 }
 
 function logWarning(warning) {
-    console.log(`    ${warning.message} (${warning.id})`);
+    const startLocation = (
+        warning.elements[0] && warning.elements[0].startLocation
+    ) || {
+        line: 0,
+        column: 0
+    };
+
+    console.log(
+        `    line ${startLocation.line} column ${startLocation.column}
+        ${warning.message} (${warning.id})`
+    );
 }
 
 function lint(config) {
