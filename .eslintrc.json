@@ -9,6 +9,10 @@
     },
     "rules": {
         "no-console": "off",
+        "complexity": [
+            "error",
+            5
+        ],
 
         "promise/param-names": "error",
         "promise/always-return": "error",
