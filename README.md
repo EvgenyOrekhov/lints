@@ -5,6 +5,8 @@
 
 ## Gain the power of static code analysis with a single command
 
+![screencast.gif](screencast.gif)
+
 lints comes with:
 - [JSLint](http://jslint.com) - The JavaScript Code Quality Tool
 - [JSHint](http://jshint.com) - a tool that helps to detect errors and potential
