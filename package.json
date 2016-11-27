@@ -60,7 +60,7 @@
     "src/"
   ],
   "devDependencies": {
-    "eslint-config-hardcore": "^1.5.0",
+    "eslint-config-hardcore": "^1.5.1",
     "eslint-plugin-fp": "^2.2.0",
     "eslint-plugin-promise": "^3.4.0"
   }
