@@ -8,19 +8,22 @@
 ![screencast.gif](screencast.gif)
 
 lints comes with:
+
 - [JSLint](http://jslint.com) - The JavaScript Code Quality Tool
 - [JSHint](http://jshint.com) - a tool that helps to detect errors and potential
-problems in your JavaScript code
+  problems in your JavaScript code
 - [ESLint](http://eslint.org) - a fully pluggable tool for identifying and
-reporting on patterns in JavaScript
+  reporting on patterns in JavaScript
 - [CSSLint](http://csslint.net) - automated linting of Cascading Stylesheets
 - [stylelint](http://stylelint.io) - a mighty, modern CSS linter
 - [HTMLHint](http://htmlhint.com) - a Static Code Analysis Tool for HTML
 - [w3cjs](http://thomasdavis.github.com/w3cjs/) - a node.js library for testing
-files or url's against the w3c html validator
+  files or url's against the w3c html validator
 - [Bootlint](http://www.bootlint.com) - an HTML linter for Bootstrap projects
+- [markdownlint](https://github.com/DavidAnson/markdownlint) - a Node.js style
+  checker and lint tool for Markdown files
 
-# Quick start
+## Quick start
 
 Install: `npm install lints -g`
 
@@ -42,7 +45,7 @@ and add it as your test script to your package.json:
 }
 ```
 
-# Configuration
+## Configuration
 
 To customize lints create the `.lints.json` file in the root of your project.
 You can see the default config in
@@ -51,13 +54,13 @@ You can see the default config in
 To customize an individual linter create a respective rc file in the root of
 your project.
 
-# Compatibility
+## Compatibility
 
 lints is compatible with the "Current" version of Node.js.
 
 You can check whether it is compatible with Node.js 4.0 on the
 [Travis CI page](https://travis-ci.org/EvgenyOrekhov/lints)
 
-# License
+## License
 
 [MIT](LICENSE)

@@ -1,3 +1,5 @@
+<!-- markdownlint-disable line-length first-line-h1 -->
+
 # Contributing
 
 1. **Fork**
@@ -21,7 +23,8 @@
         git push origin my-feature-branch
 8. **[Open a pull request](https://help.github.com/articles/using-pull-requests/ "Using pull requests · GitHub Help")**
 
-# Code style
+## Code style
+
 The names of the functions should start with a verb: `function doSomething() {`.
 
 The names of the variables and constants should not contain verbs:
@@ -33,4 +36,4 @@ A line should not exceed the 80-character limit.
 
 There must be exactly one blank line at the end of every text file.
 
-### By creating a pull request, you agree that your code will be licensed under the [MIT license](LICENSE) by the project owners.
+### By creating a pull request, you agree that your code will be licensed under the [MIT license](LICENSE) by the project owners

@@ -1,7 +1,7 @@
 {
   "name": "lints",
   "version": "9.0.0",
-  "description": "Lint all your JavaScript, CSS and HTML with a single command",
+  "description": "Lint all your JavaScript, CSS, HTML and Markdown with a single command",
   "keywords": [
     "lint",
     "linter",
@@ -19,11 +19,13 @@
     "htmlhint",
     "w3cjs",
     "bootlint",
+    "markdownlint",
     "w3c",
     "javascript",
     "js",
     "css",
-    "html"
+    "html",
+    "markdown"
   ],
   "scripts": {
     "test": "./bin/lints"
@@ -53,6 +55,7 @@
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.4",
     "jslinter": "^1.5.8",
+    "markdownlint": "^0.3.1",
     "stylelint": "^7.6.0",
     "stylelint-config-standard": "^15.0.0",
     "w3cjs": "^0.3.0"
