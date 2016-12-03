@@ -22,6 +22,8 @@ lints comes with:
 - [Bootlint](http://www.bootlint.com) - an HTML linter for Bootstrap projects
 - [markdownlint](https://github.com/DavidAnson/markdownlint) - a Node.js style
   checker and lint tool for Markdown files
+- [remark-lint](https://github.com/wooorm/remark-lint) - a Markdown code style
+  linter
 
 ## Quick start
 
@@ -35,7 +37,9 @@ exit code.
 If you want lints to run when you do `npm test`, then install it as a dev
 dependency:
 
-    npm install lints --save-dev
+```sh
+npm install lints --save-dev
+```
 
 and add it as your test script to your package.json:
 

@@ -1,5 +1,7 @@
 <!-- markdownlint-disable line-length first-line-h1 -->
 
+<!--lint disable list-item-content-indent-->
+
 # Contributing
 
 1. **Fork**

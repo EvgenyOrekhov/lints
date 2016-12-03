@@ -94,5 +94,22 @@
             "node_modules/**"
         ],
         "rcFile": ".markdownlint.json"
+    },
+    "remark-lint": {
+        "files": [
+            "**/*.markdown",
+            "**/*.mdown",
+            "**/*.mkdn",
+            "**/*.md",
+            "**/*.mkd",
+            "**/*.mdwn",
+            "**/*.mdtxt",
+            "**/*.mdtext",
+            "**/*.rmd"
+        ],
+        "ignore": [
+            "node_modules/**"
+        ],
+        "rcFile": ".remarkrc"
     }
 }
