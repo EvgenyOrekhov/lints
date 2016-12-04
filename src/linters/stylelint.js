@@ -8,13 +8,28 @@ const stylelint = require("stylelint");
 const linterName = "stylelint";
 
 function lintAndLogWarnings(settings) {
+    function buildOptions() {
+        if (settings.options.extends === undefined) {
+            return settings.options;
+        }
+
+        return Object.assign(
+            {},
+            settings.options,
+            {
+                extends: typeof settings.options.extends === "string"
+                    ? require.resolve(settings.options.extends)
+                    : settings.options.extends.map(require.resolve)
+            }
+        );
+    }
     function logWarnings(result) {
         settings.logWarnings(result.results[0].warnings);
     }
 
     const options = settings.options === undefined
-        ? {"extends": "stylelint-config-standard"}
-        : settings.options;
+        ? {"extends": require.resolve("stylelint-config-standard")}
+        : buildOptions();
 
     return stylelint
         .lint({
