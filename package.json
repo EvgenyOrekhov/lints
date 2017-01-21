@@ -51,11 +51,11 @@
     "bluebird": "^3.4.7",
     "bootlint": "^0.14.2",
     "csslint": "^1.0.5",
-    "eslint": "^3.13.1",
+    "eslint": "^3.14.0",
     "glob": "^7.1.1",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.4",
-    "jslinter": "^1.5.11",
+    "jslinter": "^1.5.12",
     "markdownlint": "^0.3.1",
     "remark": "^6.2.0",
     "remark-lint": "^5.4.0",
@@ -70,7 +70,7 @@
     "src/"
   ],
   "devDependencies": {
-    "eslint-config-hardcore": "^1.7.1",
+    "eslint-config-hardcore": "^1.8.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-promise": "^3.4.0"
   }
