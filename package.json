@@ -61,7 +61,7 @@
     "remark-lint": "^5.4.0",
     "remark-preset-lint-consistent": "^1.0.0",
     "remark-preset-lint-recommended": "^1.0.0",
-    "stylelint": "^7.8.0",
+    "stylelint": "^7.9.0",
     "stylelint-config-standard": "^16.0.0",
     "w3cjs": "^0.3.0"
   },
@@ -72,6 +72,6 @@
   "devDependencies": {
     "eslint-config-hardcore": "^1.9.0",
     "eslint-plugin-fp": "^2.3.0",
-    "eslint-plugin-promise": "^3.4.1"
+    "eslint-plugin-promise": "^3.4.2"
   }
 }
