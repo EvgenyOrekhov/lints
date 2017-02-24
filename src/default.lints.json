@@ -7,6 +7,12 @@
         ],
         "ignore": [
             "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**",
             "**/*.min.js"
         ],
         "rcFile": ".jslintrc"
@@ -19,6 +25,12 @@
         ],
         "ignore": [
             "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**",
             "**/*.min.js"
         ],
         "rcFile": ".jshintrc"
@@ -29,6 +41,12 @@
         ],
         "ignore": [
             "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**",
             "**/*.min.js"
         ],
         "rcFile": ".eslintrc"
@@ -39,6 +57,12 @@
         ],
         "ignore": [
             "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**",
             "**/*.min.css"
         ],
         "rcFile": ".csslintrc"
@@ -52,6 +76,12 @@
         ],
         "ignore": [
             "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**",
             "**/*.min.css"
         ],
         "rcFile": ".stylelintrc"
@@ -62,7 +92,13 @@
             "**/*.htm"
         ],
         "ignore": [
-            "node_modules/**"
+            "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**"
         ],
         "rcFile": ".htmlhintrc"
     },
@@ -72,7 +108,13 @@
             "**/*.htm"
         ],
         "ignore": [
-            "node_modules/**"
+            "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**"
         ],
         "rcFile": null
     },
@@ -82,7 +124,13 @@
             "**/*.htm"
         ],
         "ignore": [
-            "node_modules/**"
+            "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**"
         ],
         "rcFile": ".bootlintrc.json"
     },
@@ -99,7 +147,13 @@
             "**/*.rmd"
         ],
         "ignore": [
-            "node_modules/**"
+            "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**"
         ],
         "rcFile": ".markdownlint.json"
     },
@@ -116,7 +170,13 @@
             "**/*.rmd"
         ],
         "ignore": [
-            "node_modules/**"
+            "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**"
         ],
         "rcFile": ".remarkrc"
     }
