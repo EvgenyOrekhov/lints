@@ -1,72 +1,56 @@
 {
+    "global": {
+        "ignore": [
+            "node_modules/**",
+            "bower_components/**",
+            "jspm_packages/**",
+            ".npm/**",
+
+            "lib-cov/**",
+            "coverage/**",
+            ".nyc_output/**",
+
+            "**/*.min.js",
+            "**/*.min.css"
+        ]
+    },
+
     "jslint": {
         "files": [
             "**/*.js",
             "**/*.json",
             "**/.*.json"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**",
-            "**/*.min.js"
-        ],
+        "ignore": [],
         "rcFile": ".jslintrc"
     },
+
     "jshint": {
         "files": [
             "**/*.js",
             "**/*.json",
             "**/.*.json"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**",
-            "**/*.min.js"
-        ],
+        "ignore": [],
         "rcFile": ".jshintrc"
     },
+
     "eslint": {
         "files": [
             "**/*.js"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**",
-            "**/*.min.js"
-        ],
+        "ignore": [],
         "rcFile": ".eslintrc"
     },
+
     "csslint": {
         "files": [
             "**/*.css"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**",
-            "**/*.min.css"
-        ],
+        "ignore": [],
         "rcFile": ".csslintrc"
     },
+
     "stylelint": {
         "files": [
             "**/*.css",
@@ -74,66 +58,37 @@
             "**/*.less",
             "**/*.sss"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**",
-            "**/*.min.css"
-        ],
+        "ignore": [],
         "rcFile": ".stylelintrc"
     },
+
     "htmlhint": {
         "files": [
             "**/*.html",
             "**/*.htm"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**"
-        ],
+        "ignore": [],
         "rcFile": ".htmlhintrc"
     },
+
     "w3cjs": {
         "files": [
             "**/*.html",
             "**/*.htm"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**"
-        ],
+        "ignore": [],
         "rcFile": null
     },
+
     "bootlint": {
         "files": [
             "**/*.html",
             "**/*.htm"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**"
-        ],
+        "ignore": [],
         "rcFile": ".bootlintrc.json"
     },
+
     "markdownlint": {
         "files": [
             "**/*.markdown",
@@ -146,17 +101,10 @@
             "**/*.mdtext",
             "**/*.rmd"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**"
-        ],
+        "ignore": [],
         "rcFile": ".markdownlint.json"
     },
+
     "remark-lint": {
         "files": [
             "**/*.markdown",
@@ -169,15 +117,7 @@
             "**/*.mdtext",
             "**/*.rmd"
         ],
-        "ignore": [
-            "node_modules/**",
-            "bower_components/**",
-            "jspm_packages/**",
-            ".npm/**",
-            "lib-cov/**",
-            "coverage/**",
-            ".nyc_output/**"
-        ],
+        "ignore": [],
         "rcFile": ".remarkrc"
     }
 }
