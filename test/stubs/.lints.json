@@ -1,0 +1,7 @@
+{
+    "./linters/jslint": {
+        "files": [
+            "test/stubs/bad.js"
+        ]
+    }
+}

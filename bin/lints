@@ -1,3 +1,6 @@
 #!/usr/bin/env node
 
-require("../src/lints.js");
+require("../src/cli")({
+    rcFile: ".lints.json",
+    log: console.log
+});

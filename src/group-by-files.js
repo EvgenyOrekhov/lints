@@ -10,18 +10,24 @@ module.exports = function groupByFiles(config) {
         .reduce(
             function (acc, linterName) {
                 return R.evolve({
-                    fileLinters: (fileLinters) => config[linterName].files.reduce(
-                        function (filesAcc, fileName) {
-                            const linters = R.propOr([], fileName, filesAcc);
+                    fileLinters: (fileLinters) => config[linterName]
+                        .files
+                        .reduce(
+                            function (filesAcc, fileName) {
+                                const linters = R.propOr(
+                                    [],
+                                    fileName,
+                                    filesAcc
+                                );
 
-                            return R.assoc(
-                                fileName,
-                                linters.concat(linterName),
-                                filesAcc
-                            );
-                        },
-                        fileLinters
-                    )
+                                return R.assoc(
+                                    fileName,
+                                    linters.concat(linterName),
+                                    filesAcc
+                                );
+                            },
+                            fileLinters
+                        )
                 }, acc);
             },
             {

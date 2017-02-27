@@ -23,22 +23,22 @@ module.exports = function lints(config) {
     return Bluebird
         .props(promisedConfig)
         .then(function ({fileLinters, linterConfigs, promisedFiles}) {
-                const linters = R.mapObjIndexed(
-                    (linterConfig, linterName) => require(linterName)(linterConfig),
-                    linterConfigs
-                );
+            const linters = R.mapObjIndexed(
+                (linterConfig, linterName) => require(linterName)(linterConfig),
+                linterConfigs
+            );
 
-                const promisedWarnings = R.mapObjIndexed(
-                    (linterNames, fileName) => Bluebird.map(
-                        linterNames,
-                        (linterName) => linters[linterName]({
-                            fileName,
-                            promisedFile: promisedFiles[fileName]
-                        })
-                    ),
-                    fileLinters
-                );
+            const promisedWarnings = R.mapObjIndexed(
+                (linterNames, fileName) => Bluebird.map(
+                    linterNames,
+                    (linterName) => linters[linterName]({
+                        fileName,
+                        promisedFile: promisedFiles[fileName]
+                    })
+                ),
+                fileLinters
+            );
 
-                return Bluebird.props(promisedWarnings);
+            return Bluebird.props(promisedWarnings);
         });
 };
