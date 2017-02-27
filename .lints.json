@@ -37,5 +37,14 @@
         ],
         "ignore": [],
         "rcFile": ".csslintrc"
+    },
+
+    "../src/linters/htmlhint": {
+        "files": [
+            "**/*.html",
+            "**/*.htm"
+        ],
+        "ignore": [],
+        "rcFile": ".htmlhintrc"
     }
 }
