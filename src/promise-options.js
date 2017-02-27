@@ -11,7 +11,7 @@ Bluebird.promisifyAll(fs);
 
 module.exports = function promiseOptions(config) {
     return R.evolve({
-        linters: R.mapObjIndexed(
+        linterConfigs: R.mapObjIndexed(
             function (linterConfig) {
                 const promisedRcFile = fs.readFileAsync(
                     linterConfig.rcFile,

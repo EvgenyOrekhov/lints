@@ -8,10 +8,7 @@ const promiseOptions = require("../src/promise-options");
 
 test("promiseOptions()", function (t) {
     const result = promiseOptions({
-        files: {
-            "test/stubs/text.txt": ["linter"]
-        },
-        linters: {
+        linterConfigs: {
             linter: {
                 rcFile: "test/stubs/json.json"
             }
@@ -21,10 +18,7 @@ test("promiseOptions()", function (t) {
     t.match(
         result,
         {
-            files: {
-                "test/stubs/text.txt": ["linter"]
-            },
-            linters: {
+            linterConfigs: {
                 linter: {
                     rcFile: "test/stubs/json.json"
                 }
@@ -34,14 +28,14 @@ test("promiseOptions()", function (t) {
     );
 
     return Promise.all([
-        result.linters.linter.promisedRcFile.then(
+        result.linterConfigs.linter.promisedRcFile.then(
             (rcFileContents) => t.strictSame(
                 rcFileContents,
                 "{\"some\":\"json\"}\n",
                 "should resolve to rcFile contents"
             )
         ),
-        result.linters.linter.promisedOptions.then(
+        result.linterConfigs.linter.promisedOptions.then(
             (options) => t.strictSame(
                 options,
                 {some: "json"},
@@ -53,7 +47,7 @@ test("promiseOptions()", function (t) {
 
 test("promiseOptions()", function (t) {
     const result = promiseOptions({
-        linters: {
+        linterConfigs: {
             linter: {
                 rcFile: "nonexistent"
             }
@@ -61,14 +55,14 @@ test("promiseOptions()", function (t) {
     });
 
     return Promise.all([
-        result.linters.linter.promisedRcFile.then(
+        result.linterConfigs.linter.promisedRcFile.then(
             (rcFileContents) => t.strictSame(
                 rcFileContents,
                 undefined,
                 "should resolve to undefined if rcFile is not found"
             )
         ),
-        result.linters.linter.promisedOptions.then(
+        result.linterConfigs.linter.promisedOptions.then(
             (options) => t.strictSame(
                 options,
                 undefined,
@@ -80,14 +74,14 @@ test("promiseOptions()", function (t) {
 
 test("promiseOptions()", function (t) {
     const result = promiseOptions({
-        linters: {
+        linterConfigs: {
             linter: {
                 rcFile: "test/stubs/text.txt"
             }
         }
     });
 
-    return result.linters.linter.promisedOptions.then(
+    return result.linterConfigs.linter.promisedOptions.then(
         (options) => t.strictSame(
             options,
             undefined,
@@ -98,7 +92,7 @@ test("promiseOptions()", function (t) {
 
 test("promiseOptions()", function (t) {
     const result = promiseOptions({
-        linters: {
+        linterConfigs: {
             linter: {
                 rcFile: null
             }
@@ -106,14 +100,14 @@ test("promiseOptions()", function (t) {
     });
 
     return Promise.all([
-        result.linters.linter.promisedRcFile.then(
+        result.linterConfigs.linter.promisedRcFile.then(
             (rcFileContents) => t.strictSame(
                 rcFileContents,
                 undefined,
                 "should resolve to undefined if the \"rcFile\" option is null"
             )
         ),
-        result.linters.linter.promisedOptions.then(
+        result.linterConfigs.linter.promisedOptions.then(
             (options) => t.strictSame(
                 options,
                 undefined,
@@ -125,13 +119,13 @@ test("promiseOptions()", function (t) {
 
 test("promiseOptions()", function (t) {
     const result = promiseOptions({
-        linters: {
+        linterConfigs: {
             linter: {}
         }
     });
 
     return Promise.all([
-        result.linters.linter.promisedRcFile.then(
+        result.linterConfigs.linter.promisedRcFile.then(
             (rcFileContents) => t.strictSame(
                 rcFileContents,
                 undefined,
@@ -139,7 +133,7 @@ test("promiseOptions()", function (t) {
                         + "undefined"
             )
         ),
-        result.linters.linter.promisedOptions.then(
+        result.linterConfigs.linter.promisedOptions.then(
             (options) => t.strictSame(
                 options,
                 undefined,

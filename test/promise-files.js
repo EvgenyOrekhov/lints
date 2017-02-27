@@ -8,22 +8,16 @@ const promiseFiles = require("../src/promise-files");
 
 test("promiseFiles()", function (t) {
     const result = promiseFiles({
-        files: {
+        fileLinters: {
             "test/stubs/text.txt": ["linter"]
-        },
-        linters: {
-            linter: {}
         }
     });
 
     t.match(
         result,
         {
-            files: {
+            fileLinters: {
                 "test/stubs/text.txt": ["linter"]
-            },
-            linters: {
-                linter: {}
             }
         },
         "should not modify original properties"

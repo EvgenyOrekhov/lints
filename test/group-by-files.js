@@ -32,12 +32,12 @@ test("groupByFiles()", function (t) {
     t.strictSame(
         result,
         {
-            files: {
+            fileLinters: {
                 fileA: ["linterAB"],
                 fileB: ["linterAB", "linterBC"],
                 fileC: ["linterBC"]
             },
-            linters: {
+            linterConfigs: {
                 linterAB: {
                     rcFile: ".linterAB.rc"
                 },
@@ -79,12 +79,12 @@ test("groupByFiles()", function (t) {
     t.strictSame(
         result,
         {
-            files: {
+            fileLinters: {
                 fileA: ["linterAB"],
                 fileB: ["linterAB", "linterBC"],
                 fileC: ["linterBC"]
             },
-            linters: {
+            linterConfigs: {
                 linterAB: {
                     rcFile: ".linterAB.rc"
                 },

@@ -10,7 +10,7 @@ module.exports = function groupByFiles(config) {
         .reduce(
             function (acc, linterName) {
                 return R.evolve({
-                    files: (files) => config[linterName].files.reduce(
+                    fileLinters: (fileLinters) => config[linterName].files.reduce(
                         function (filesAcc, fileName) {
                             const linters = R.propOr([], fileName, filesAcc);
 
@@ -20,13 +20,13 @@ module.exports = function groupByFiles(config) {
                                 filesAcc
                             );
                         },
-                        files
+                        fileLinters
                     )
                 }, acc);
             },
             {
-                files: {},
-                linters: R.pipe(
+                fileLinters: {},
+                linterConfigs: R.pipe(
                     R.pickBy(
                         R.propSatisfies(
                             R.complement(R.isEmpty),

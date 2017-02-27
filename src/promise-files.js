@@ -14,7 +14,7 @@ module.exports = function promiseFiles(config) {
         "promisedFiles",
         R.mapObjIndexed(
             (ignore, fileName) => fs.readFileAsync(fileName, "utf8"),
-            config.files
+            config.fileLinters
         ),
         config
     );
