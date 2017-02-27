@@ -29,5 +29,13 @@
         ],
         "ignore": [],
         "rcFile": ".jslintrc"
+    },
+
+    "../src/linters/csslint": {
+        "files": [
+            "**/*.css"
+        ],
+        "ignore": [],
+        "rcFile": ".csslintrc"
     }
 }
