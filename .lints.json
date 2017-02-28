@@ -55,5 +55,14 @@
         ],
         "ignore": [],
         "rcFile": null
+    },
+
+    "../src/linters/bootlint": {
+        "files": [
+            "**/*.html",
+            "**/*.htm"
+        ],
+        "ignore": [],
+        "rcFile": ".bootlintrc.json"
     }
 }
