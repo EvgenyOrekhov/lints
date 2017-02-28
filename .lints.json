@@ -31,12 +31,31 @@
         "rcFile": ".jslintrc"
     },
 
+    "../src/linters/eslint": {
+        "files": [
+            "**/*.js"
+        ],
+        "ignore": [],
+        "rcFile": ".eslintrc.json"
+    },
+
     "../src/linters/csslint": {
         "files": [
             "**/*.css"
         ],
         "ignore": [],
         "rcFile": ".csslintrc"
+    },
+
+    "../src/linters/stylelint": {
+        "files": [
+            "**/*.css",
+            "**/*.scss",
+            "**/*.less",
+            "**/*.sss"
+        ],
+        "ignore": [],
+        "rcFile": ".stylelintrc"
     },
 
     "../src/linters/htmlhint": {
@@ -80,25 +99,6 @@
         ],
         "ignore": [],
         "rcFile": ".markdownlint.json"
-    },
-
-    "../src/linters/stylelint": {
-        "files": [
-            "**/*.css",
-            "**/*.scss",
-            "**/*.less",
-            "**/*.sss"
-        ],
-        "ignore": [],
-        "rcFile": ".stylelintrc"
-    },
-
-    "../src/linters/eslint": {
-        "files": [
-            "**/*.js"
-        ],
-        "ignore": [],
-        "rcFile": ".eslintrc.json"
     },
 
     "../src/linters/remark-lint": {
