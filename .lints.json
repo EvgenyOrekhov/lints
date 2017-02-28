@@ -80,5 +80,16 @@
         ],
         "ignore": [],
         "rcFile": ".markdownlint.json"
+    },
+
+    "../src/linters/stylelint": {
+        "files": [
+            "**/*.css",
+            "**/*.scss",
+            "**/*.less",
+            "**/*.sss"
+        ],
+        "ignore": [],
+        "rcFile": ".stylelintrc"
     }
 }
