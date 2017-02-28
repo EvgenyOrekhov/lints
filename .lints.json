@@ -64,5 +64,21 @@
         ],
         "ignore": [],
         "rcFile": ".bootlintrc.json"
+    },
+
+    "../src/linters/markdownlint": {
+        "files": [
+            "**/*.markdown",
+            "**/*.mdown",
+            "**/*.mkdn",
+            "**/*.md",
+            "**/*.mkd",
+            "**/*.mdwn",
+            "**/*.mdtxt",
+            "**/*.mdtext",
+            "**/*.rmd"
+        ],
+        "ignore": [],
+        "rcFile": ".markdownlint.json"
     }
 }
