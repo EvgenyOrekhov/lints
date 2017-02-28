@@ -46,5 +46,14 @@
         ],
         "ignore": [],
         "rcFile": ".htmlhintrc"
+    },
+
+    "../src/linters/w3cjs": {
+        "files": [
+            "**/*.html",
+            "**/*.htm"
+        ],
+        "ignore": [],
+        "rcFile": null
     }
 }
