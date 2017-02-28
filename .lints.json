@@ -99,5 +99,21 @@
         ],
         "ignore": [],
         "rcFile": ".eslintrc.json"
+    },
+
+    "../src/linters/remark-lint": {
+        "files": [
+            "**/*.markdown",
+            "**/*.mdown",
+            "**/*.mkdn",
+            "**/*.md",
+            "**/*.mkd",
+            "**/*.mdwn",
+            "**/*.mdtxt",
+            "**/*.mdtext",
+            "**/*.rmd"
+        ],
+        "ignore": [],
+        "rcFile": ".remarkrc"
     }
 }
