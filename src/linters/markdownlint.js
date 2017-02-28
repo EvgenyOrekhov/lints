@@ -15,31 +15,32 @@ module.exports = function makeLinter({promisedOptions}) {
                 options: promisedOptions,
                 file: promisedFile
             })
-            .then(function ({options, file}) {
+            .then(function runMarkdownlint({options, file}) {
                 return markdownlintAsync({
                     strings: {data: file},
                     config: options,
                     resultVersion: 1
-                }).then(function ({data}) {
-                    return {
-                        linterName: "markdownlint",
-                        warnings: data.map(function ({
-                            lineNumber: line,
-                            errorDetail,
-                            ruleDescription,
-                            ruleAlias: ruleId
-                        }) {
-                            return {
-                                line,
-                                column: 0,
-                                message: errorDetail
-                                    ? `${ruleDescription} (${errorDetail})`
-                                    : ruleDescription,
-                                ruleId
-                            };
-                        })
-                    };
                 });
+            })
+            .then(function adaptWarnings({data}) {
+                return {
+                    linterName: "markdownlint",
+                    warnings: data.map(function adaptWarning({
+                        lineNumber: line,
+                        errorDetail,
+                        ruleDescription,
+                        ruleAlias: ruleId
+                    }) {
+                        return {
+                            line,
+                            column: 0,
+                            message: errorDetail
+                                ? `${ruleDescription} (${errorDetail})`
+                                : ruleDescription,
+                            ruleId
+                        };
+                    })
+                };
             });
     };
 };

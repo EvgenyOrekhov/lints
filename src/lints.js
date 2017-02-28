@@ -22,8 +22,13 @@ module.exports = function lints(config) {
 
     return Bluebird
         .props(promisedConfig)
-        .then(function ({fileLinters, linterConfigs, promisedFiles}) {
+        .then(function instantiateAndRunLinters({
+            fileLinters,
+            linterConfigs,
+            promisedFiles
+        }) {
             const linters = R.mapObjIndexed(
+                // eslint-disable-next-line global-require
                 (linterConfig, linterName) => require(linterName)(linterConfig),
                 linterConfigs
             );

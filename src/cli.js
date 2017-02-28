@@ -21,7 +21,7 @@ module.exports = function cli({
         .then(lints)
         .then(prettyPrint)
         .tap(log)
-        .then(function (output) {
+        .then(function setAndReturnExitCode(output) {
             process.exitCode = Number(output.length > 0);
 
             return process.exitCode;

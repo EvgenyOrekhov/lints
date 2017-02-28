@@ -12,7 +12,7 @@ Bluebird.promisifyAll(fs);
 module.exports = function promiseOptions(config) {
     return R.evolve({
         linterConfigs: R.mapObjIndexed(
-            function (linterConfig) {
+            function promiseRcFileAndParsedOptions(linterConfig) {
                 const promisedRcFile = fs.readFileAsync(
                     linterConfig.rcFile,
                     "utf8"

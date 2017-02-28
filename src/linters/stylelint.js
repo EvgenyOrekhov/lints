@@ -14,7 +14,7 @@ module.exports = function makeLinter({promisedOptions}) {
                 options: promisedOptions,
                 file: promisedFile
             })
-            .then(function ({options, file}) {
+            .then(function runStylelint({options, file}) {
                 const defaultedOptions = R.defaultTo(
                     {extends: "stylelint-config-standard"},
                     options
@@ -39,30 +39,34 @@ module.exports = function makeLinter({promisedOptions}) {
                     defaultedOptions
                 );
 
-                return stylelint
-                    .lint({
-                        code: file,
-                        codeFilename: fileName,
-                        config: resolvedOptions
-                    })
-                    .then(function ({results}) {
-                        return {
-                            linterName: "stylelint",
-                            warnings: results[0].warnings.map(function ({
+                return stylelint.lint({
+                    code: file,
+                    codeFilename: fileName,
+                    config: resolvedOptions
+                });
+            })
+            .then(function adaptWarnings({results}) {
+                return {
+                    linterName: "stylelint",
+                    warnings: results[0].warnings.map(
+                        function adaptWarning({
+                            line,
+                            column,
+                            text: message,
+                            rule: ruleId
+                        }) {
+                            return {
                                 line,
                                 column,
-                                text: message,
-                                rule: ruleId
-                            }) {
-                                return {
-                                    line,
-                                    column,
-                                    message: message.replace(/\s\(.+\)$/, ""),
-                                    ruleId
-                                };
-                            })
-                        };
-                    });
+                                message: message.replace(
+                                    /\s\(.+\)$/,
+                                    ""
+                                ),
+                                ruleId
+                            };
+                        }
+                    )
+                };
             });
     };
 };

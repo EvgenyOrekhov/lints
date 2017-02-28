@@ -13,12 +13,12 @@ module.exports = function makeLinter({promisedOptions}) {
                 options: promisedOptions,
                 file: promisedFile
             })
-            .then(function ({options, file}) {
+            .then(function lintAndAdaptWarnings({options, file}) {
                 const {messages} = csslint.verify(file, options);
 
                 return {
                     linterName: "CSSLint",
-                    warnings: messages.map(function ({
+                    warnings: messages.map(function adaptWarning({
                         line,
                         col: column,
                         message,

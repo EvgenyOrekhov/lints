@@ -21,7 +21,8 @@ module.exports = function makeLinter({promisedOptions}) {
                 cliEngine: promisedCliEngine,
                 file: promisedFile
             })
-            .then(function ({cliEngine, file}) {
+            .then(function lintAndAdaptWarnings({cliEngine, file}) {
+                // eslint-disable-next-line prefer-destructuring
                 const {messages} = cliEngine.executeOnText(file).results[0];
 
                 return {

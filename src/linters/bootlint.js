@@ -14,20 +14,21 @@ module.exports = function makeLinter({promisedOptions}) {
                 options: promisedOptions,
                 file: promisedFile
             })
-            .then(function ({options, file}) {
+            .then(function lintAndAdaptWarnings({options, file}) {
                 const defaultedOptions = R.defaultTo([], options);
 
                 const warnings = [];
 
                 bootlint.lintHtml(
                     file,
+                    // eslint-disable-next-line fp/no-mutating-methods
                     (warning) => warnings.push(warning),
                     defaultedOptions
                 );
 
                 return {
                     linterName: "Bootlint",
-                    warnings: warnings.map(function ({
+                    warnings: warnings.map(function adaptWarning({
                         elements,
                         message,
                         id: ruleId

@@ -91,5 +91,13 @@
         ],
         "ignore": [],
         "rcFile": ".stylelintrc"
+    },
+
+    "../src/linters/eslint": {
+        "files": [
+            "**/*.js"
+        ],
+        "ignore": [],
+        "rcFile": ".eslintrc.json"
     }
 }

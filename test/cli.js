@@ -1,4 +1,5 @@
 /*jslint node, es6, maxlen: 80 */
+/*eslint "func-names": "off", "no-magic-numbers": "off" */
 
 "use strict";
 
@@ -9,19 +10,22 @@ const cli = require("../src/cli");
 test("cli()", function (t) {
     t.plan(3);
 
-    const log = (result) => t.strictSame(
-        result,
-        `test/stubs/bad.js (JSLint)
+    function log(result) {
+        return t.strictSame(
+            result,
+            `test/stubs/bad.js (JSLint)
     line 0 column 11
         Expected ';' and instead saw '(end)'. (expected_a_b)
 `,
-        "should log warnings"
-    );
+            "should log warnings"
+        );
+    }
 
     return cli({
         rcFile: "test/stubs/.lints.json",
         log
     })
+        // eslint-disable-next-line promise/always-return
         .then(function (exitCode) {
             t.strictSame(exitCode, 1);
             t.strictSame(process.exitCode, 1);

@@ -12,7 +12,7 @@ module.exports = function parseGlobs(config) {
     const linterConfigs = R.dissoc("global", config);
 
     const promisedFiles = R.mapObjIndexed(
-        function ({files, ignore: ignorePatterns}) {
+        function promiseFiles({files, ignore: ignorePatterns}) {
             const defaultedIgnore = R.defaultTo([], ignorePatterns);
 
             return globby(files, {

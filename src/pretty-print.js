@@ -16,29 +16,27 @@ function prettifyWarning({
 
 module.exports = R.pipe(
     R.mapObjIndexed(
-        function (results, fileName) {
-            return R.pipe(
-                R.reject(
-                    R.propSatisfies(R.isEmpty, "warnings")
-                ),
-                R.map(
-                    R.pipe(
-                        R.evolve({
-                            warnings: R.map(prettifyWarning)
-                        }),
-                        R.evolve({
-                            warnings: R.join("\n")
-                        }),
-                        function ({linterName, warnings}) {
-                            return `${fileName} (${linterName})
+        (results, fileName) => R.pipe(
+            R.reject(
+                R.propSatisfies(R.isEmpty, "warnings")
+            ),
+            R.map(
+                R.pipe(
+                    R.evolve({
+                        warnings: R.map(prettifyWarning)
+                    }),
+                    R.evolve({
+                        warnings: R.join("\n")
+                    }),
+                    function prettifyWarningsForFile({linterName, warnings}) {
+                        return `${fileName} (${linterName})
 ${warnings}
 `;
-                        }
-                    )
-                ),
-                R.join("\n")
-            )(results);
-        }
+                    }
+                )
+            ),
+            R.join("\n")
+        )(results)
     ),
     R.values,
     R.reject(R.isEmpty),

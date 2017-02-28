@@ -8,12 +8,19 @@
         "node": true
     },
     "rules": {
-        "no-console": "off",
         "complexity": [
             "error",
             5
         ],
-        "prefer-destructuring": "off",
+        "id-length": [
+            "error",
+            {
+                "exceptions": [
+                    "R",
+                    "t"
+                ]
+            }
+        ],
 
         "promise/param-names": "error",
         "promise/always-return": "error",

@@ -13,12 +13,12 @@ module.exports = function makeLinter({promisedOptions}) {
                 options: promisedOptions,
                 file: promisedFile
             })
-            .then(function ({options, file}) {
+            .then(function lintAndAdaptWarnings({options, file}) {
                 jshint(file, options);
 
                 return {
                     linterName: "JSHint",
-                    warnings: jshint.errors.map(function ({
+                    warnings: jshint.errors.map(function adaptWarning({
                         line,
                         character: column,
                         reason: message,

@@ -12,18 +12,19 @@ module.exports = function makeLinter() {
             .props({
                 file: promisedFile
             })
-            .then(function ({file}) {
+            .then(function lintAndAdaptWarnings({file}) {
+                // eslint-disable-next-line promise/avoid-new
                 return new Promise(
                     (resolve) => w3cjs.validate({
                         input: file,
-                        callback: function ({messages}) {
+                        callback: function callback({messages}) {
                             resolve({
                                 linterName: "w3cjs",
                                 warnings: messages
                                     .filter(
                                         (message) => message.type === "error"
                                     )
-                                    .map(function ({
+                                    .map(function adaptWarning({
                                         lastLine: line,
                                         lastColumn: column,
                                         message,

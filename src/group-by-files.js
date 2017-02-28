@@ -1,4 +1,5 @@
 /*jslint node, es6, maxlen: 80 */
+/*eslint indent: "off" */
 
 "use strict";
 
@@ -8,12 +9,12 @@ module.exports = function groupByFiles(config) {
     return Object
         .keys(config)
         .reduce(
-            function (acc, linterName) {
-                return R.evolve({
+            (acc, linterName) => R.evolve(
+                {
                     fileLinters: (fileLinters) => config[linterName]
                         .files
                         .reduce(
-                            function (filesAcc, fileName) {
+                            function addLinterNameToFile(filesAcc, fileName) {
                                 const linters = R.propOr(
                                     [],
                                     fileName,
@@ -28,8 +29,9 @@ module.exports = function groupByFiles(config) {
                             },
                             fileLinters
                         )
-                }, acc);
-            },
+                },
+                acc
+            ),
             {
                 fileLinters: {},
                 linterConfigs: R.pipe(
