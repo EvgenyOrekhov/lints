@@ -31,7 +31,7 @@
   "scripts": {
     "lint": "./bin/lints",
     "pretest": "npm run lint",
-    "test": "tap test/*.js test/linters/*.js --cov",
+    "test": "tap 'test/*.js' 'test/linters/**/*.js' --cov",
     "posttest": "tap --coverage-report=text-summary && tap --coverage-report=html",
     "tap": "tap"
   },
