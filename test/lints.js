@@ -9,7 +9,7 @@ const lints = require("../src/lints");
 
 test("lints()", function (t) {
     const config = {
-        "../test/stubs/linter": {
+        "linter": {
             files: [
                 "test/stubs/text.txt"
             ],
@@ -17,7 +17,7 @@ test("lints()", function (t) {
         }
     };
 
-    const promisedResult = lints(config);
+    const promisedResult = lints(config, "../test/stubs/");
 
     return promisedResult.then(
         (result) => t.strictSame(

@@ -17,7 +17,7 @@ const promiseConfig = R.pipeP(
     promiseFiles
 );
 
-module.exports = function lints(config) {
+module.exports = function lints(config, lintersDirectory) {
     const promisedConfig = promiseConfig(config);
 
     return Bluebird
@@ -29,7 +29,9 @@ module.exports = function lints(config) {
         }) {
             const linters = R.mapObjIndexed(
                 // eslint-disable-next-line global-require
-                (linterConfig, linterName) => require(linterName)(linterConfig),
+                (linterConfig, linterName) => require(
+                    lintersDirectory + linterName
+                )(linterConfig),
                 linterConfigs
             );
 

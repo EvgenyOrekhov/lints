@@ -2,5 +2,6 @@
 
 require("../src/cli")({
     rcFile: ".lints.json",
-    log: console.log
+    log: console.log,
+    lintersDirectory: "./linters/"
 });

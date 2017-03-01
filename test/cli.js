@@ -23,7 +23,8 @@ test("cli()", function (t) {
 
     return cli({
         rcFile: "test/stubs/.lints.json",
-        log
+        log,
+        lintersDirectory: "./linters/"
     })
         // eslint-disable-next-line promise/always-return
         .then(function (exitCode) {
@@ -44,7 +45,8 @@ test("cli()", function (t) {
 
     return cli({
         rcFile: "test/stubs/.lints.json",
-        log
+        log,
+        lintersDirectory: "./linters/"
     })
         .catch(function () {
             t.strictSame(process.exitCode, 1);

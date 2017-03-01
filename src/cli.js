@@ -13,12 +13,13 @@ Bluebird.promisifyAll(fs);
 
 module.exports = function cli({
     rcFile,
-    log
+    log,
+    lintersDirectory
 }) {
     return fs
         .readFileAsync(rcFile, "utf8")
         .then(JSON.parse)
-        .then(lints)
+        .then((config) => lints(config, lintersDirectory))
         .then(prettyPrint)
         .tap(log)
         .then(function setAndReturnExitCode(output) {

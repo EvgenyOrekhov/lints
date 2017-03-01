@@ -1,5 +1,5 @@
 {
-    "./linters/jslint": {
+    "jslint": {
         "files": [
             "test/stubs/bad.js"
         ]

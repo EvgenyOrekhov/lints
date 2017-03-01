@@ -17,7 +17,7 @@
         ]
     },
 
-    "../src/linters/jslint": {
+    "jslint": {
         "files": [
             "**/*.js",
             "**/*.json",
@@ -31,7 +31,7 @@
         "rcFile": ".jslintrc"
     },
 
-    "../src/linters/eslint": {
+    "eslint": {
         "files": [
             "**/*.js"
         ],
@@ -39,7 +39,7 @@
         "rcFile": ".eslintrc.json"
     },
 
-    "../src/linters/csslint": {
+    "csslint": {
         "files": [
             "**/*.css"
         ],
@@ -47,7 +47,7 @@
         "rcFile": ".csslintrc"
     },
 
-    "../src/linters/stylelint": {
+    "stylelint": {
         "files": [
             "**/*.css",
             "**/*.scss",
@@ -58,7 +58,7 @@
         "rcFile": ".stylelintrc"
     },
 
-    "../src/linters/htmlhint": {
+    "htmlhint": {
         "files": [
             "**/*.html",
             "**/*.htm"
@@ -67,7 +67,7 @@
         "rcFile": ".htmlhintrc"
     },
 
-    "../src/linters/w3cjs": {
+    "w3cjs": {
         "files": [
             "**/*.html",
             "**/*.htm"
@@ -76,7 +76,7 @@
         "rcFile": null
     },
 
-    "../src/linters/bootlint": {
+    "bootlint": {
         "files": [
             "**/*.html",
             "**/*.htm"
@@ -85,7 +85,7 @@
         "rcFile": ".bootlintrc.json"
     },
 
-    "../src/linters/markdownlint": {
+    "markdownlint": {
         "files": [
             "**/*.markdown",
             "**/*.mdown",
@@ -101,7 +101,7 @@
         "rcFile": ".markdownlint.json"
     },
 
-    "../src/linters/remark-lint": {
+    "remark-lint": {
         "files": [
             "**/*.markdown",
             "**/*.mdown",
