@@ -5,10 +5,11 @@
 const fs = require("fs");
 
 const Bluebird = require("bluebird");
+const R = require("ramda");
 
 const lints = require("./lints");
 const report = require("./report");
-const prettyPrintWarnings = require("./pretty-print-warnings");
+const prettyPrintReport = require("./pretty-print-report");
 
 Bluebird.promisifyAll(fs);
 
@@ -22,10 +23,11 @@ module.exports = function cli({
         .then(JSON.parse)
         .then((config) => lints(config, lintersDirectory))
         .then(report)
-        .then(prettyPrintWarnings)
-        .tap(log)
-        .then(function setAndReturnExitCode(output) {
-            process.exitCode = Number(output.length > 0);
+        .tap(
+            R.pipe(prettyPrintReport, log)
+        )
+        .then(function setAndReturnExitCode({numbers}) {
+            process.exitCode = Number(numbers.totalWarnings > 0);
 
             return process.exitCode;
         })
