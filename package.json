@@ -81,6 +81,6 @@
     "eslint-config-hardcore": "^1.9.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-promise": "^3.5.0",
-    "tap": "^10.2.2"
+    "tap": "^10.3.0"
   }
 }
