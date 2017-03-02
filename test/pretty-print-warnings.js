@@ -5,10 +5,10 @@
 
 const {test} = require("tap");
 
-const prettyPrint = require("../src/pretty-print");
+const prettyPrintWarnings = require("../src/pretty-print-warnings");
 
-test("prettyPrint()", function (t) {
-    const result = prettyPrint({
+test("prettyPrintWarnings()", function (t) {
+    const result = prettyPrintWarnings({
         filesWithWarnings: {
             fileNameA: [
                 {
@@ -78,8 +78,8 @@ fileNameC (linterA)
     t.end();
 });
 
-test("prettyPrint()", function (t) {
-    const resultWithoutFiles = prettyPrint({filesWithWarnings: {}});
+test("prettyPrintWarnings()", function (t) {
+    const resultWithoutFiles = prettyPrintWarnings({filesWithWarnings: {}});
 
     t.strictSame(
         resultWithoutFiles,
