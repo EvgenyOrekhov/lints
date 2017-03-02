@@ -7,6 +7,7 @@ const fs = require("fs");
 const Bluebird = require("bluebird");
 
 const lints = require("./lints");
+const report = require("./report");
 const prettyPrint = require("./pretty-print");
 
 Bluebird.promisifyAll(fs);
@@ -20,6 +21,7 @@ module.exports = function cli({
         .readFileAsync(rcFile, "utf8")
         .then(JSON.parse)
         .then((config) => lints(config, lintersDirectory))
+        .then(report)
         .then(prettyPrint)
         .tap(log)
         .then(function setAndReturnExitCode(output) {

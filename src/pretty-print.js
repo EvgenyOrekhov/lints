@@ -15,11 +15,9 @@ function prettifyWarning({
 }
 
 module.exports = R.pipe(
+    R.prop("filesWithWarnings"),
     R.mapObjIndexed(
         (results, fileName) => R.pipe(
-            R.reject(
-                R.propSatisfies(R.isEmpty, "warnings")
-            ),
             R.map(
                 R.pipe(
                     R.evolve({
@@ -39,6 +37,5 @@ ${warnings}
         )(results)
     ),
     R.values,
-    R.reject(R.isEmpty),
     R.join("\n")
 );

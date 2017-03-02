@@ -9,58 +9,51 @@ const prettyPrint = require("../src/pretty-print");
 
 test("prettyPrint()", function (t) {
     const result = prettyPrint({
-        fileNameA: [
-            {
-                linterName: "linterA",
-                warnings: [
-                    {
-                        line: 4,
-                        column: 2,
-                        message: "Warning message",
-                        ruleId: "ruleId"
-                    }
-                ]
-            },
-            {
-                linterName: "linterB",
-                warnings: [
-                    {
-                        line: 2,
-                        column: 3,
-                        message: "Another warning message",
-                        ruleId: "anotherRuleId"
-                    }
-                ]
-            },
-            {
-                linterName: "linterC",
-                warnings: []
-            }
-        ],
-        fileNameB: [
-            {
-                warnings: []
-            }
-        ],
-        fileNameC: [
-            {
-                linterName: "linterA",
-                warnings: [
-                    {
-                        line: 1,
-                        column: 6,
-                        message: "Warning message",
-                        ruleId: "ruleId"
-                    },
-                    {
-                        line: 1,
-                        column: 5,
-                        message: "Warning message",
-                        ruleId: "ruleId"
-                    }
-                ]
-            }
-        ]
+        filesWithWarnings: {
+            fileNameA: [
+                {
+                    linterName: "linterA",
+                    warnings: [
+                        {
+                            line: 4,
+                            column: 2,
+                            message: "Warning message",
+                            ruleId: "ruleId"
+                        }
+                    ]
+                },
+                {
+                    linterName: "linterB",
+                    warnings: [
+                        {
+                            line: 2,
+                            column: 3,
+                            message: "Another warning message",
+                            ruleId: "anotherRuleId"
+                        }
+                    ]
+                }
+            ],
+            fileNameC: [
+                {
+                    linterName: "linterA",
+                    warnings: [
+                        {
+                            line: 1,
+                            column: 6,
+                            message: "Warning message",
+                            ruleId: "ruleId"
+                        },
+                        {
+                            line: 1,
+                            column: 5,
+                            message: "Warning message",
+                            ruleId: "ruleId"
+                        }
+                    ]
+                }
+            ]
+        }
     });
 
     t.strictSame(
@@ -86,27 +79,12 @@ fileNameC (linterA)
 });
 
 test("prettyPrint()", function (t) {
-    const resultWithoutWarnings = prettyPrint({
-        fileNameA: [
-            {
-                linterName: "linterA",
-                warnings: []
-            }
-        ]
-    });
-
-    t.strictSame(
-        resultWithoutWarnings,
-        "",
-        "should pretty print if there are no warnings"
-    );
-
-    const resultWithoutFiles = prettyPrint({});
+    const resultWithoutFiles = prettyPrint({filesWithWarnings: {}});
 
     t.strictSame(
         resultWithoutFiles,
         "",
-        "should pretty print if there are no files"
+        "should pretty print if there are no files with warnings"
     );
 
     t.end();
