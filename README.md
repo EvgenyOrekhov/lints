@@ -41,11 +41,11 @@ dependency:
 npm install lints --save-dev
 ```
 
-and add it as your test script to your package.json:
+and add it as your `pretest` script to your package.json:
 
 ```json
 "scripts": {
-    "test": "lints"
+    "pretest": "lints"
 }
 ```
 
