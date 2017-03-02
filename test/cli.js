@@ -84,3 +84,28 @@ test("cli()", function (t) {
             t.strictSame(process.exitCode, 0);
         });
 });
+
+test("cli()", function (t) {
+    t.plan(3);
+
+    function log(result) {
+        return t.match(
+            result,
+            "Used linters: JSLint, JSHint, ESLint, markdownlint, remark-lint",
+            "should use default.lints.json if .lints.json is not found"
+        );
+    }
+
+    return cli({
+        rcFile: "nonexistent",
+        log,
+        lintersDirectory: "./linters/"
+    })
+        // eslint-disable-next-line promise/always-return
+        .then(function (exitCode) {
+            t.strictSame(exitCode, 1);
+            t.strictSame(process.exitCode, 1);
+
+            process.exitCode = 0;
+        });
+});

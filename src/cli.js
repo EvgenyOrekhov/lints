@@ -20,6 +20,9 @@ module.exports = function cli({
 }) {
     return fs
         .readFileAsync(rcFile, "utf8")
+        .catch(
+            () => fs.readFileAsync(`${__dirname}/default.lints.json`, "utf8")
+        )
         .then(JSON.parse)
         .then((config) => lints(config, lintersDirectory))
         .then(report)
