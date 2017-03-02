@@ -12,7 +12,10 @@
                 "languages": [
                     "javascript"
                 ]
-            }
+            },
+            "exclude_paths": [
+                "test/"
+            ]
         }
     },
     "ratings": {
