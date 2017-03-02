@@ -10,5 +10,19 @@
         "allow_failures": [
             {"node_js": "6.0"}
         ]
-    }
+    },
+
+    "after_success": [
+        "npm install -g codeclimate-test-reporter",
+        "tap --coverage-report=text-lcov | codeclimate-test-reporter",
+
+        "npm install -g codacy-coverage",
+        "tap --coverage-report=text-lcov | codacy-coverage",
+
+        "npm install -g codecov",
+        "tap --coverage-report=text-lcov > coverage.lcov && codecov",
+
+        "npm install -g coveralls",
+        "tap --coverage-report=text-lcov | coveralls"
+    ]
 }
