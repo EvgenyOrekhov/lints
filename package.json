@@ -52,16 +52,16 @@
   },
   "homepage": "https://github.com/EvgenyOrekhov/lints#readme",
   "dependencies": {
-    "bluebird": "^3.4.7",
+    "bluebird": "^3.5.0",
     "bootlint": "^0.14.2",
     "chalk": "^1.1.3",
     "csslint": "^1.0.5",
-    "eslint": "^3.16.1",
+    "eslint": "^3.17.0",
     "globby": "^6.1.0",
     "htmlhint": "^0.9.13",
     "jshint": "^2.9.4",
     "jslinter": "^1.5.14",
-    "markdownlint": "^0.3.1",
+    "markdownlint": "^0.4.0",
     "ramda": "^0.23.0",
     "remark": "^7.0.0",
     "remark-lint": "^6.0.0",
@@ -78,7 +78,7 @@
   ],
   "devDependencies": {
     "ansi-styles": "^3.0.0",
-    "eslint-config-hardcore": "^1.9.0",
+    "eslint-config-hardcore": "^1.10.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-promise": "^3.5.0",
     "tap": "^10.3.0"

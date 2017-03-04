@@ -1,4 +1,4 @@
-<!-- markdownlint-disable line-length first-line-h1 -->
+<!-- markdownlint-disable line-length -->
 
 <!--lint disable list-item-content-indent-->
 
