@@ -78,8 +78,7 @@
   ],
   "devDependencies": {
     "ansi-styles": "^3.0.0",
-    "eslint-config-hardcore": "^1.10.0",
-    "eslint-plugin-fp": "^2.3.0",
+    "eslint-config-hardcore-fp": "^1.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "tap": "^10.3.0"
   }
