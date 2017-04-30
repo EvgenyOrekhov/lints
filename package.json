@@ -63,7 +63,7 @@
     "jslinter": "^1.5.19",
     "markdownlint": "^0.4.1",
     "ramda": "^0.23.0",
-    "remark": "^7.0.0",
+    "remark": "^7.0.1",
     "remark-lint": "^6.0.0",
     "remark-preset-lint-consistent": "^2.0.0",
     "remark-preset-lint-recommended": "^2.0.0",
