@@ -15,9 +15,15 @@ module.exports = function makeLinter() {
             .then(function lintAndAdaptWarnings({file}) {
                 // eslint-disable-next-line promise/avoid-new
                 return new Promise(
-                    (resolve) => w3cjs.validate({
+                    (resolve, reject) => w3cjs.validate({
                         input: file,
-                        callback: function callback({messages}) {
+                        callback: function callback(err, result) {
+                            if (err) {
+                                return reject(err);
+                            }
+
+                            const {messages} = result;
+
                             resolve({
                                 linterName: "w3cjs",
                                 warnings: messages

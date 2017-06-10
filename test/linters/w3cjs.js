@@ -4,6 +4,7 @@
 "use strict";
 
 const {test} = require("tap");
+const nock = require("nock");
 
 const makeLinter = require("../../src/linters/w3cjs");
 
@@ -40,6 +41,28 @@ test("w3cjs", function (t) {
                 ]
             },
             "should lint using w3cjs"
+        )
+    );
+});
+
+test("w3cjs", function (t) {
+    nock("http://validator.w3.org")
+        .filteringPath(() => "/")
+        .post("/")
+        .replyWithError("Error message");
+
+    t.tearDown(() => nock.cleanAll());
+
+    const lint = makeLinter();
+
+    return lint({
+        promisedFile: Promise.resolve("")
+    }).then(
+        t.notOk,
+        (err) => t.strictSame(
+            err.message,
+            "Error message",
+            "should reject w3cjs errors"
         )
     );
 });
