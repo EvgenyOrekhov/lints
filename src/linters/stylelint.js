@@ -12,13 +12,12 @@ module.exports = function makeLinter({promisedOptions}) {
         R.pipe(
             R.defaultTo({extends: "stylelint-config-standard"}),
 
-/*
- * Note: require.resolve() is needed for the "extends" feature due to a bug in
- * stylelint.
- *
- * See https://github.com/stylelint/stylelint/issues/1973
- * and https://github.com/stylelint/stylelint/issues/1973#issuecomment-264695959
- */
+            /*
+             * Note: require.resolve() is needed for the "extends" feature due
+             * to a bug in stylelint.
+             *
+             * See https://github.com/stylelint/stylelint/issues/1973
+             */
 
             R.evolve({
                 extends: R.ifElse(
