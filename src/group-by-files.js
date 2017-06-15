@@ -35,11 +35,8 @@ module.exports = function groupByFiles(config) {
             {
                 fileLinters: {},
                 linterConfigs: R.pipe(
-                    R.pickBy(
-                        R.propSatisfies(
-                            R.complement(R.isEmpty),
-                            "files"
-                        )
+                    R.reject(
+                        R.propSatisfies(R.isEmpty, "files")
                     ),
                     R.map(
                         R.omit(["files", "ignore"])
