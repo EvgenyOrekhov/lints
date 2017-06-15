@@ -11,7 +11,7 @@ module.exports = function parseGlobs(config) {
 
     const linterConfigs = R.dissoc("global", config);
 
-    const promisedFiles = R.mapObjIndexed(
+    const promisedFiles = R.map(
         function promiseFiles({files, ignore: ignorePatterns}) {
             const defaultedIgnore = R.defaultTo([], ignorePatterns);
 

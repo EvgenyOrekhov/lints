@@ -6,7 +6,7 @@ const R = require("ramda");
 
 module.exports = function report(lintsResult) {
     const filesWithWarnings = R.pipe(
-        R.mapObjIndexed(
+        R.map(
             R.reject(
                 R.propSatisfies(R.isEmpty, "warnings")
             )

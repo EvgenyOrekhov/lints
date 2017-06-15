@@ -41,7 +41,7 @@ module.exports = function groupByFiles(config) {
                             "files"
                         )
                     ),
-                    R.mapObjIndexed(
+                    R.map(
                         R.omit(["files", "ignore"])
                     )
                 )(config)
