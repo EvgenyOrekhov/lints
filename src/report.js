@@ -4,6 +4,16 @@
 
 const R = require("ramda");
 
+function getProperty(propertyName) {
+    return R.pipe(
+        R.values,
+        R.flatten,
+        R.map(
+            R.prop(propertyName)
+        )
+    );
+}
+
 module.exports = function report(lintsResult) {
     const filesWithWarnings = R.pipe(
         R.map(
@@ -21,23 +31,13 @@ module.exports = function report(lintsResult) {
             totalFiles: Object.keys(lintsResult).length,
             filesWithWarnings: Object.keys(filesWithWarnings).length,
             totalWarnings: R.pipe(
-                R.values,
+                getProperty("warnings"),
                 R.flatten,
-                R.map(
-                    R.pipe(
-                        R.prop("warnings"),
-                        R.length
-                    )
-                ),
-                R.sum
+                R.length
             )(filesWithWarnings)
         },
         usedLinters: R.pipe(
-            R.values,
-            R.flatten,
-            R.map(
-                R.prop("linterName")
-            ),
+            getProperty("linterName"),
             R.uniq
         )(lintsResult)
     };
