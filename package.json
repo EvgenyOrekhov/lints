@@ -67,7 +67,7 @@
         "remark-lint": "^6.0.0",
         "remark-preset-lint-consistent": "^2.0.0",
         "remark-preset-lint-recommended": "^2.0.0",
-        "stylelint": "^7.11.0",
+        "stylelint": "^7.11.1",
         "stylelint-config-standard": "^16.0.0",
         "w3cjs": "^0.4.0",
         "wordwrap": "^1.0.0"
@@ -81,6 +81,6 @@
         "eslint-config-hardcore-fp": "^1.2.0",
         "eslint-plugin-promise": "^3.5.0",
         "nock": "^9.0.13",
-        "tap": "^10.3.3"
+        "tap": "^10.3.4"
     }
 }
