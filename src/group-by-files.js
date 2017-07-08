@@ -1,5 +1,4 @@
 /*jslint node, es6, maxlen: 80 */
-/*eslint indent: "off" */
 
 "use strict";
 
