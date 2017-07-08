@@ -18,11 +18,9 @@ const promiseConfig = R.pipeP(
 );
 
 module.exports = function lints(config, lintersDirectory) {
-    const promisedConfig = promiseConfig(config);
-
-    return Bluebird
-        .props(promisedConfig)
-        .then(function instantiateAndRunLinters({
+    return R.pipeP(
+        promiseConfig,
+        function instantiateAndRunLinters({
             fileLinters,
             linterConfigs,
             promisedFiles
@@ -35,7 +33,7 @@ module.exports = function lints(config, lintersDirectory) {
                 linterConfigs
             );
 
-            const promisedWarnings = R.mapObjIndexed(
+            return R.mapObjIndexed(
                 (linterNames, fileName) => Bluebird.map(
                     linterNames,
                     (linterName) => linters[linterName]({
@@ -45,7 +43,7 @@ module.exports = function lints(config, lintersDirectory) {
                 ),
                 fileLinters
             );
-
-            return Bluebird.props(promisedWarnings);
-        });
+        },
+        Bluebird.props
+    )(config);
 };

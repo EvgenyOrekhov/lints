@@ -13,19 +13,11 @@ module.exports = function groupByFiles(config) {
                     fileLinters: (fileLinters) => config[linterName]
                         .files
                         .reduce(
-                            function addLinterNameToFile(filesAcc, fileName) {
-                                const linters = R.propOr(
-                                    [],
-                                    fileName,
-                                    filesAcc
-                                );
-
-                                return R.assoc(
-                                    fileName,
-                                    linters.concat(linterName),
-                                    filesAcc
-                                );
-                            },
+                            (filesAcc, fileName) => R.assoc(
+                                fileName,
+                                R.append(linterName, filesAcc[fileName]),
+                                filesAcc
+                            ),
                             fileLinters
                         )
                 },

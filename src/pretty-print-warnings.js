@@ -21,10 +21,10 @@ module.exports = R.pipe(
             R.map(
                 R.pipe(
                     R.evolve({
-                        warnings: R.map(prettifyWarning)
-                    }),
-                    R.evolve({
-                        warnings: R.join("\n")
+                        warnings: R.pipe(
+                            R.map(prettifyWarning),
+                            R.join("\n")
+                        )
                     }),
                     function prettifyWarningsForFile({linterName, warnings}) {
                         return `${fileName} (${linterName})
