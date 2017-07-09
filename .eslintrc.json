@@ -1,11 +1,10 @@
 {
     "extends": "hardcore-fp",
-    "plugins": [
-        "promise"
-    ],
+
     "env": {
         "node": true
     },
+
     "rules": {
         "complexity": [
             "error",
@@ -20,18 +19,6 @@
                 ]
             }
         ],
-
-        "promise/param-names": "error",
-        "promise/always-return": "error",
-        "promise/catch-or-return": "error",
-        "promise/no-return-wrap": "error",
-        "promise/no-nesting": "error",
-        "promise/no-promise-in-callback": "error",
-        "promise/avoid-new": "error",
-        "promise/no-callback-in-promise": "error",
-        "promise/no-native": "off",
-        "promise/prefer-await-to-then": "off",
-        "promise/prefer-await-to-callbacks": "off",
 
         "fp/no-mutation": [
             "error",
