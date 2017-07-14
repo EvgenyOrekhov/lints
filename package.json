@@ -67,7 +67,7 @@
         "remark-lint": "^6.0.0",
         "remark-preset-lint-consistent": "^2.0.0",
         "remark-preset-lint-recommended": "^2.0.0",
-        "stylelint": "^7.12.0",
+        "stylelint": "^7.13.0",
         "stylelint-config-standard": "^16.0.0",
         "w3cjs": "^0.4.0",
         "wordwrap": "^1.0.0"
@@ -78,7 +78,7 @@
     ],
     "devDependencies": {
         "ansi-styles": "^3.1.0",
-        "eslint-config-hardcore-fp": "^2.0.0",
+        "eslint-config-hardcore-fp": "^2.1.0",
         "nock": "^9.0.13",
         "tap": "^10.7.0"
     }

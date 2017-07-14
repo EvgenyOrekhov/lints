@@ -9,7 +9,7 @@ const lints = require("../src/lints");
 
 test("lints()", function (t) {
     const config = {
-        "linter": {
+        linter: {
             files: [
                 "test/stubs/text.txt"
             ],
