@@ -9,22 +9,20 @@ const Bluebird = require("bluebird");
 
 Bluebird.promisifyAll(fs);
 
-module.exports = function promiseOptions(config) {
-    return R.evolve({
-        linterConfigs: R.map(
-            function promiseRcFileAndParsedOptions(linterConfig) {
-                const promisedRcFile = fs.readFileAsync(
-                    linterConfig.rcFile,
-                    "utf8"
-                );
+module.exports = R.evolve({
+    linterConfigs: R.map(
+        function promiseRcFileAndParsedOptions(linterConfig) {
+            const promisedRcFile = fs.readFileAsync(
+                linterConfig.rcFile,
+                "utf8"
+            );
 
-                return R.merge(linterConfig, {
-                    promisedRcFile: promisedRcFile.catch(() => undefined),
-                    promisedOptions: promisedRcFile
-                        .then(JSON.parse)
-                        .catch(() => undefined)
-                });
-            }
-        )
-    }, config);
-};
+            return R.merge(linterConfig, {
+                promisedRcFile: promisedRcFile.catch(() => undefined),
+                promisedOptions: promisedRcFile
+                    .then(JSON.parse)
+                    .catch(() => undefined)
+            });
+        }
+    )
+});
