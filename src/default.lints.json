@@ -11,8 +11,7 @@
             "coverage/**",
             ".nyc_output/**",
 
-            "**/*.min.js",
-            "**/*.min.css"
+            "**/*.min.*"
         ]
     },
 
