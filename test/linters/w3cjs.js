@@ -66,3 +66,22 @@ test("w3cjs", function (t) {
         )
     );
 });
+
+test("w3cjs", function (t) {
+    const lint = makeLinter();
+
+    return lint({
+        promisedFile: Promise.resolve("<div></div>")
+    }).then(
+        function ({warnings}) {
+            return t.match(
+                warnings[0],
+                {
+                    line: 0,
+                    column: 0
+                },
+                "should use 0 as the default value for line and column number"
+            );
+        }
+    );
+});

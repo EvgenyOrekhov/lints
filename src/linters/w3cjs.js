@@ -31,14 +31,14 @@ module.exports = function makeLinter() {
                                         (message) => message.type === "error"
                                     )
                                     .map(function adaptWarning({
-                                        lastLine: line,
-                                        lastColumn: column,
+                                        lastLine,
+                                        lastColumn,
                                         message,
                                         type: ruleId
                                     }) {
                                         return {
-                                            line,
-                                            column,
+                                            line: lastLine || 0,
+                                            column: lastColumn || 0,
                                             message,
                                             ruleId
                                         };
