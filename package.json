@@ -77,7 +77,7 @@
         "src/"
     ],
     "devDependencies": {
-        "ansi-styles": "^3.1.0",
+        "ansi-styles": "^3.2.0",
         "eslint-config-hardcore-fp": "^2.2.0",
         "nock": "^9.0.14",
         "tap": "^10.7.0"
