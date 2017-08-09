@@ -54,9 +54,9 @@
     "dependencies": {
         "bluebird": "^3.5.0",
         "bootlint": "^0.14.2",
-        "chalk": "^2.0.1",
+        "chalk": "^2.1.0",
         "csslint": "^1.0.5",
-        "eslint": "^4.4.0",
+        "eslint": "^4.4.1",
         "globby": "^6.1.0",
         "htmlhint": "^0.9.13",
         "jshint": "^2.9.5",
