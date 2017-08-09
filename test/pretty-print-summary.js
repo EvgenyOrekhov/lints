@@ -10,6 +10,8 @@ const ansiStyles = require("ansi-styles");
 
 const prettyPrintSummary = require("../src/pretty-print-summary");
 
+const basicColorSupport = 1;
+
 test("prettyPrintSummary()", function (t) {
     const result = prettyPrintSummary({
         numbers: {
@@ -85,8 +87,10 @@ Total warnings: 8
 });
 
 test("prettyPrintSummary()", function (t) {
-    // eslint-disable-next-line fp/no-mutation
+    /* eslint-disable fp/no-mutation */
     chalk.enabled = true;
+    chalk.level = basicColorSupport;
+    /* eslint-enable fp/no-mutation */
 
     const badResult = prettyPrintSummary({
         numbers: {
@@ -129,9 +133,6 @@ ${ansiStyles.green.open}Total warnings: 0${ansiStyles.green.close}
 `,
         "should use green color if there are no warnings"
     );
-
-    // eslint-disable-next-line fp/no-mutation
-    chalk.enabled = false;
 
     t.end();
 });
