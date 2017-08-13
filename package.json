@@ -60,7 +60,7 @@
         "globby": "^6.1.0",
         "htmlhint": "^0.9.13",
         "jshint": "^2.9.5",
-        "jslinter": "^1.5.22",
+        "jslinter": "^1.5.23",
         "markdownlint": "^0.6.0",
         "ramda": "^0.24.1",
         "remark": "^8.0.0",
@@ -80,6 +80,6 @@
         "ansi-styles": "^3.2.0",
         "eslint-config-hardcore-fp": "^3.0.0",
         "nock": "^9.0.14",
-        "tap": "^10.7.1"
+        "tap": "^10.7.2"
     }
 }
