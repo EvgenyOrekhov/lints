@@ -44,7 +44,7 @@ test("stylelint", function (t) {
     });
 
     return lint({
-        promisedFile: Promise.resolve("a {}")
+        promisedFile: Promise.resolve("a {}\n")
     }).then(
         (result) => t.strictSame(
             result,
@@ -75,7 +75,7 @@ test("stylelint", function (t) {
     });
 
     return lint({
-        promisedFile: Promise.resolve("a {}")
+        promisedFile: Promise.resolve("a {}\n")
     }).then(
         (result) => t.strictSame(
             result,
