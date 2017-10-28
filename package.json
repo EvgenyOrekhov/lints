@@ -54,9 +54,9 @@
     "dependencies": {
         "bluebird": "^3.5.1",
         "bootlint": "^0.14.2",
-        "chalk": "^2.1.0",
+        "chalk": "^2.3.0",
         "csslint": "^1.0.5",
-        "eslint": "^4.9.0",
+        "eslint": "^4.10.0",
         "globby": "^6.1.0",
         "htmlhint": "^0.9.13",
         "jshint": "^2.9.5",
@@ -79,7 +79,7 @@
     "devDependencies": {
         "ansi-styles": "^3.2.0",
         "eslint-config-hardcore-fp": "^3.2.0",
-        "nock": "^9.0.22",
+        "nock": "^9.0.25",
         "tap": "^10.7.2"
     }
 }
