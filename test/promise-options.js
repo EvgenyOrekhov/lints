@@ -40,7 +40,34 @@ test("promiseOptions()", function (t) {
             (options) => t.strictSame(
                 options,
                 {some: "json"},
-                "should resolve to parsed options"
+                "should parse JSON"
+            )
+        )
+    ]);
+});
+
+test("promiseOptions()", function (t) {
+    const result = promiseOptions({
+        linterConfigs: {
+            linter: {
+                rcFile: "test/stubs/yaml.yaml"
+            }
+        }
+    });
+
+    return Promise.all([
+        result.linterConfigs.linter.promisedRcFile.then(
+            (rcFileContents) => t.strictSame(
+                rcFileContents,
+                "%YAML 1.2\n---\nsome: yaml\n",
+                "should resolve to rcFile contents"
+            )
+        ),
+        result.linterConfigs.linter.promisedOptions.then(
+            (options) => t.strictSame(
+                options,
+                {some: "yaml"},
+                "should parse YAML"
             )
         )
     ]);
@@ -77,7 +104,7 @@ test("promiseOptions()", function (t) {
     const result = promiseOptions({
         linterConfigs: {
             linter: {
-                rcFile: "test/stubs/text.txt"
+                rcFile: "test/stubs/unparseable.txt"
             }
         }
     });

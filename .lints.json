@@ -29,7 +29,9 @@
             "**/.*.yml",
             ".remarkrc"
         ],
-        "ignore": [],
+        "ignore": [
+            "test/stubs/yaml.yaml"
+        ],
         "rcFile": ".jslintrc"
     },
 

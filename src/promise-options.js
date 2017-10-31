@@ -6,6 +6,7 @@ const fs = require("fs");
 
 const R = require("ramda");
 const Bluebird = require("bluebird");
+const jsYaml = require("js-yaml");
 
 Bluebird.promisifyAll(fs);
 
@@ -20,7 +21,13 @@ module.exports = R.evolve({
             return R.merge(linterConfig, {
                 promisedRcFile: promisedRcFile.catch(() => undefined),
                 promisedOptions: promisedRcFile
-                    .then(JSON.parse)
+                    .then(function parse(rcFile) {
+                        try {
+                            return JSON.parse(rcFile);
+                        } catch (ignore) {
+                            return jsYaml.safeLoad(rcFile);
+                        }
+                    })
                     .catch(() => undefined)
             });
         }

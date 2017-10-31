@@ -59,6 +59,7 @@
         "eslint": "^4.10.0",
         "globby": "^6.1.0",
         "htmlhint": "^0.9.13",
+        "js-yaml": "^3.10.0",
         "jshint": "^2.9.5",
         "jslinter": "^1.5.30",
         "markdownlint": "^0.6.1",
