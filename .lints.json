@@ -26,7 +26,8 @@
             "**/*.yaml",
             "**/.*.yaml",
             "**/*.yml",
-            "**/.*.yml"
+            "**/.*.yml",
+            ".remarkrc"
         ],
         "ignore": [],
         "rcFile": ".jslintrc"
