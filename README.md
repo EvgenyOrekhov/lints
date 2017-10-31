@@ -1,5 +1,6 @@
 # lints
 
+[![npm version](https://img.shields.io/npm/v/lints.svg?style=flat-square)](https://www.npmjs.com/package/lints)
 [![Travis CI build status](https://img.shields.io/travis/EvgenyOrekhov/lints/master.svg?style=flat-square)](https://travis-ci.org/EvgenyOrekhov/lints)
 [![Codacy grade](https://img.shields.io/codacy/757146806ea6467e9ecdd1cd2873ec60/master.svg?style=flat-square)](https://www.codacy.com/app/EvgenyOrekhov/lints)
 
