@@ -119,5 +119,13 @@
         ],
         "ignore": [],
         "rcFile": ".remarkrc"
+    },
+
+    "dockerfilelint": {
+        "files": [
+            "**/*Dockerfile*"
+        ],
+        "ignore": [],
+        "rcFile": ".dockerfilelintrc"
     }
 }

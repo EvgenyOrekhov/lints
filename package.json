@@ -1,7 +1,7 @@
 {
     "name": "lints",
     "version": "14.0.0",
-    "description": "Lint all your JavaScript, CSS, HTML and Markdown with a single command",
+    "description": "Lint all your JavaScript, CSS, HTML, Markdown and Dockerfiles with a single command",
     "keywords": [
         "lint",
         "linter",
@@ -26,7 +26,9 @@
         "js",
         "css",
         "html",
-        "markdown"
+        "markdown",
+        "dockerfile",
+        "dockerfilelint"
     ],
     "scripts": {
         "lint": "./bin/lints",
@@ -56,6 +58,7 @@
         "bootlint": "^0.14.2",
         "chalk": "^2.3.0",
         "csslint": "^1.0.5",
+        "dockerfilelint": "^1.4.0",
         "eslint": "^4.10.0",
         "globby": "^6.1.0",
         "htmlhint": "^0.9.13",

@@ -27,7 +27,8 @@
             "**/.*.yaml",
             "**/*.yml",
             "**/.*.yml",
-            ".remarkrc"
+            ".remarkrc",
+            "**/.dockerfilelintrc"
         ],
         "ignore": [
             "test/stubs/yaml.yaml"
@@ -119,5 +120,16 @@
         ],
         "ignore": [],
         "rcFile": ".remarkrc"
+    },
+
+    "dockerfilelint": {
+        "files": [
+            "**/*Dockerfile*"
+        ],
+        "ignore": [
+            "test/linters/dockerfilelint.js",
+            "src/linters/dockerfilelint.js"
+        ],
+        "rcFile": ".dockerfilelintrc"
     }
 }

@@ -25,6 +25,8 @@ lints comes with:
   checker and lint tool for Markdown files
 - [remark-lint](https://github.com/wooorm/remark-lint) - a Markdown code style
   linter
+- [dockerfilelint](https://github.com/replicatedhq/dockerfilelint) - linter and
+  validator for Dockerfile
 
 ## Quick start
 
