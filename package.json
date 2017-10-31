@@ -79,7 +79,7 @@
     "devDependencies": {
         "ansi-styles": "^3.2.0",
         "eslint-config-hardcore-fp": "^3.2.0",
-        "nock": "^9.0.25",
+        "nock": "^9.0.27",
         "tap": "^10.7.2"
     }
 }
