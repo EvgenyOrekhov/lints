@@ -22,7 +22,7 @@ module.exports = function makeLinter({promisedOptions}) {
             R.evolve({
                 extends: R.ifElse(
                     R.is(String),
-                    require.resolve,
+                    (baseConfig) => require.resolve(baseConfig),
                     R.map(require.resolve)
                 )
             })
