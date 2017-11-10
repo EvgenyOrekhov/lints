@@ -64,8 +64,8 @@
         "htmlhint": "^0.9.13",
         "js-yaml": "^3.10.0",
         "jshint": "^2.9.5",
-        "jslinter": "^1.5.30",
-        "markdownlint": "^0.6.1",
+        "jslinter": "^1.5.32",
+        "markdownlint": "^0.6.2",
         "ramda": "^0.25.0",
         "remark": "^8.0.0",
         "remark-lint": "^6.0.1",
@@ -82,8 +82,8 @@
     ],
     "devDependencies": {
         "ansi-styles": "^3.2.0",
-        "eslint-config-hardcore-fp": "^3.2.0",
-        "nock": "^9.0.27",
-        "tap": "^10.7.2"
+        "eslint-config-hardcore-fp": "^3.4.0",
+        "nock": "^9.1.0",
+        "tap": "^10.7.3"
     }
 }
