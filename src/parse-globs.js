@@ -17,7 +17,6 @@ module.exports = function parseGlobs(config) {
 
             return globby(files, {
                 ignore: globalIgnore.concat(defaultedIgnore),
-                nodir: true,
                 nocase: true
             });
         },
