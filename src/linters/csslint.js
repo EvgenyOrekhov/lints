@@ -20,13 +20,13 @@ module.exports = function makeLinter({promisedOptions}) {
                     linterName: "CSSLint",
                     warnings: messages.map(function adaptWarning({
                         line,
-                        col: column,
+                        col,
                         message,
                         rule
                     }) {
                         return {
-                            line,
-                            column,
+                            line: line || 0,
+                            column: col || 0,
                             message,
                             ruleId: rule.id
                         };

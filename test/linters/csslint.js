@@ -32,3 +32,41 @@ test("csslint", function (t) {
         )
     );
 });
+
+test("csslint", function (t) {
+    const lint = makeLinter({
+        promisedOptions: Promise.resolve()
+    });
+
+    return lint({
+        promisedFile: Promise.resolve(`
+a {font-size: 0;}
+a {font-size: 0;}
+a {font-size: 0;}
+a {font-size: 0;}
+a {font-size: 0;}
+a {font-size: 0;}
+a {font-size: 0;}
+a {font-size: 0;}
+a {font-size: 0;}
+a {font-size: 0;}
+`)
+    }).then(
+        (result) => t.strictSame(
+            result,
+            {
+                linterName: "CSSLint",
+                warnings: [
+                    {
+                        line: 0,
+                        column: 0,
+                        message: "Too many font-size declarations (10), "
+                                + "abstraction needed.",
+                        ruleId: "font-sizes"
+                    }
+                ]
+            },
+            "should use 0 as the default value for line and column number"
+        )
+    );
+});
