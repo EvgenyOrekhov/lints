@@ -8,6 +8,8 @@ const Bluebird = require("bluebird");
 
 const markdownlintAsync = Bluebird.promisify(markdownlint);
 
+const indexOfRuleAlias = 1;
+
 module.exports = function makeLinter({promisedOptions}) {
     return function lint({promisedFile}) {
         return Bluebird
@@ -18,8 +20,7 @@ module.exports = function makeLinter({promisedOptions}) {
             .then(function runMarkdownlint({options, file}) {
                 return markdownlintAsync({
                     strings: {data: file},
-                    config: options,
-                    resultVersion: 1
+                    config: options
                 });
             })
             .then(function adaptWarnings({data}) {
@@ -29,7 +30,7 @@ module.exports = function makeLinter({promisedOptions}) {
                         lineNumber: line,
                         errorDetail,
                         ruleDescription,
-                        ruleAlias: ruleId
+                        ruleNames
                     }) {
                         return {
                             line,
@@ -37,7 +38,7 @@ module.exports = function makeLinter({promisedOptions}) {
                             message: errorDetail
                                 ? `${ruleDescription} (${errorDetail})`
                                 : ruleDescription,
-                            ruleId
+                            ruleId: ruleNames[indexOfRuleAlias]
                         };
                     })
                 };
