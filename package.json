@@ -64,7 +64,7 @@
         "htmlhint": "^0.9.13",
         "js-yaml": "^3.10.0",
         "jshint": "^2.9.5",
-        "jslinter": "^1.5.37",
+        "jslinter": "^1.5.38",
         "markdownlint": "^0.7.0",
         "ramda": "^0.25.0",
         "remark": "^9.0.0",
@@ -84,6 +84,6 @@
         "ansi-styles": "^3.2.0",
         "eslint-config-hardcore-fp": "^3.5.0",
         "nock": "^9.1.6",
-        "tap": "^11.0.1"
+        "tap": "^11.1.0"
     }
 }
