@@ -18,8 +18,7 @@
     "jslint": {
         "files": [
             "**/*.js",
-            "**/*.json",
-            "**/.*.json"
+            "**/*.json"
         ],
         "ignore": [],
         "rcFile": ".jslintrc"
@@ -28,8 +27,7 @@
     "jshint": {
         "files": [
             "**/*.js",
-            "**/*.json",
-            "**/.*.json"
+            "**/*.json"
         ],
         "ignore": [],
         "rcFile": ".jshintrc"

@@ -22,11 +22,8 @@
         "files": [
             "**/*.js",
             "**/*.json",
-            "**/.*.json",
             "**/*.yaml",
-            "**/.*.yaml",
             "**/*.yml",
-            "**/.*.yml",
             ".remarkrc",
             "**/.dockerfilelintrc"
         ],

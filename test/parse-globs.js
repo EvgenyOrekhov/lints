@@ -86,3 +86,23 @@ test("parseGlobs()", function (t) {
         "should not crash if linter's \"ignore\" is missing"
     ));
 });
+
+test("parseGlobs()", function (t) {
+    return parseGlobs({
+        linter: {
+            files: [
+                "test/stubs/glob/*.dot"
+            ]
+        }
+    }).then((result) => t.strictSame(
+        result,
+        {
+            linter: {
+                files: [
+                    "test/stubs/glob/.example.dot"
+                ]
+            }
+        },
+        "should match filenames starting with a dot"
+    ));
+});

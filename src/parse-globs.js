@@ -17,7 +17,8 @@ module.exports = function parseGlobs(config) {
 
             return globby(files, {
                 ignore: globalIgnore.concat(defaultedIgnore),
-                nocase: true
+                nocase: true,
+                dot: true
             });
         },
         linterConfigs
