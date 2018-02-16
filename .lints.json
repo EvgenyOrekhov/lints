@@ -13,8 +13,7 @@
             "coverage/**",
             ".nyc_output/**",
 
-            "**/*.min.js",
-            "**/*.min.css",
+            "**/*.min.*",
 
             "test/stubs/bad.js"
         ]
