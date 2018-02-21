@@ -59,7 +59,7 @@
         "chalk": "^2.3.1",
         "csslint": "^1.0.5",
         "dockerfilelint": "^1.4.0",
-        "eslint": "^4.18.0",
+        "eslint": "^4.18.1",
         "globby": "^8.0.1",
         "htmlhint": "^0.9.13",
         "js-yaml": "^3.10.0",
@@ -71,8 +71,8 @@
         "remark-lint": "^6.0.1",
         "remark-preset-lint-consistent": "^2.0.1",
         "remark-preset-lint-recommended": "^3.0.1",
-        "stylelint": "^8.4.0",
-        "stylelint-config-standard": "^18.0.0",
+        "stylelint": "^9.1.0",
+        "stylelint-config-standard": "^18.1.0",
         "w3cjs": "^0.4.0",
         "wordwrap": "^1.0.0"
     },
@@ -84,6 +84,6 @@
         "ansi-styles": "^3.2.0",
         "eslint-config-hardcore-fp": "^3.5.0",
         "nock": "^9.1.6",
-        "tap": "^11.1.0"
+        "tap": "^11.1.1"
     }
 }
