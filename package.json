@@ -59,13 +59,13 @@
         "chalk": "^2.3.2",
         "csslint": "^1.0.5",
         "dockerfilelint": "^1.4.0",
-        "eslint": "^4.19.0",
+        "eslint": "^4.19.1",
         "globby": "^8.0.1",
         "htmlhint": "^0.9.13",
         "js-yaml": "^3.11.0",
         "jshint": "^2.9.5",
-        "jslinter": "^1.5.41",
-        "markdownlint": "^0.8.0",
+        "jslinter": "^1.5.42",
+        "markdownlint": "^0.8.1",
         "ramda": "^0.25.0",
         "remark": "^9.0.0",
         "remark-lint": "^6.0.1",
@@ -84,6 +84,6 @@
         "ansi-styles": "^3.2.1",
         "eslint-config-hardcore-fp": "^3.5.0",
         "nock": "^9.2.3",
-        "tap": "^11.1.2"
+        "tap": "^11.1.3"
     }
 }
