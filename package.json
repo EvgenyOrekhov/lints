@@ -56,7 +56,7 @@
     "dependencies": {
         "bluebird": "^3.5.1",
         "bootlint": "^0.14.2",
-        "chalk": "^2.4.0",
+        "chalk": "^2.4.1",
         "csslint": "^1.0.5",
         "dockerfilelint": "^1.4.0",
         "eslint": "^4.19.1",
@@ -64,7 +64,7 @@
         "htmlhint": "^0.9.13",
         "js-yaml": "^3.11.0",
         "jshint": "^2.9.5",
-        "jslinter": "^1.5.46",
+        "jslinter": "^1.5.47",
         "markdownlint": "^0.8.1",
         "ramda": "^0.25.0",
         "remark": "^9.0.0",
