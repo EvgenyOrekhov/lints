@@ -84,6 +84,6 @@
         "ansi-styles": "^3.2.1",
         "eslint-config-hardcore-fp": "^3.6.0",
         "nock": "^9.2.5",
-        "tap": "^11.1.4"
+        "tap": "^11.1.5"
     }
 }
