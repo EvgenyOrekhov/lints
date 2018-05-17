@@ -24,7 +24,7 @@ test("markdownlint", function (t) {
                         line: 1,
                         column: 0,
                         message: "First line in file should be a top level "
-                                + "header",
+                                + "heading",
                         ruleId: "first-line-h1"
                     }
                 ]
