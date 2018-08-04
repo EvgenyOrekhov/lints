@@ -55,7 +55,7 @@ module.exports = function makeLinter({promisedOptions}) {
                             return {
                                 line,
                                 column,
-                                message: message.replace(/\s\(.+\)$/, ""),
+                                message: message.replace(/\s\(.+\)$/u, ""),
                                 ruleId
                             };
                         }
