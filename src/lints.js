@@ -25,13 +25,18 @@ module.exports = function lints(config, lintersDirectory) {
             linterConfigs,
             promisedFiles
         }) {
+            /*
+                eslint-disable
+                global-require,
+                security/detect-non-literal-require
+            */
             const linters = R.mapObjIndexed(
-                // eslint-disable-next-line global-require
                 (linterConfig, linterName) => require(
                     lintersDirectory + linterName
                 )(linterConfig),
                 linterConfigs
             );
+            /* eslint-enable */
 
             return R.mapObjIndexed(
                 (linterNames, fileName) => Bluebird.map(
