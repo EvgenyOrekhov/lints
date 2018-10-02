@@ -39,7 +39,7 @@ test("bootlint", function (t) {
                         column: 12,
                         message: "Incorrect markup used with the `.checkbox` "
                                 + "class. The correct markup structure is "
-                                + ".checkbox>label>input[type=\"checkbox\"]",
+                                + "`.checkbox>label>input[type=\"checkbox\"]`",
                         ruleId: "E017"
                     },
                     {
@@ -76,7 +76,7 @@ test("bootlint", function (t) {
                         column: 12,
                         message: "Incorrect markup used with the `.checkbox` "
                                 + "class. The correct markup structure is "
-                                + ".checkbox>label>input[type=\"checkbox\"]",
+                                + "`.checkbox>label>input[type=\"checkbox\"]`",
                         ruleId: "E017"
                     }
                 ]
