@@ -12,7 +12,9 @@
             "lib-cov/**",
             "coverage/**",
             ".nyc_output/**",
+            ".cache/**",
 
+            "dist/**",
             "**/*.min.*"
         ]
     },
