@@ -62,3 +62,33 @@ test("eslint", function (t) {
         )
     );
 });
+
+test("eslint", function (t) {
+    const lint = makeLinter({
+        promisedOptions: Promise.resolve({
+            parserOptions: {
+                ecmaVersion: 2018,
+                sourceType: "module"
+            },
+            plugins: ["import"],
+            rules: {
+                "import/extensions": [
+                    "error",
+                    "always",
+                    {js: "never"}
+                ]
+            }
+        })
+    });
+
+    return lint({
+        promisedFile: Promise.resolve(`import eslint from "./eslint";`),
+        fileName: __filename
+    }).then(
+        (result) => t.strictSame(
+            result.warnings,
+            [],
+            "should pass file name to ESLint"
+        )
+    );
+});

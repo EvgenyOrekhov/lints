@@ -15,7 +15,7 @@ module.exports = function makeLinter({promisedOptions}) {
         })
     );
 
-    return function lint({promisedFile}) {
+    return function lint({promisedFile, fileName}) {
         return Bluebird
             .props({
                 cliEngine: promisedCliEngine,
@@ -23,7 +23,9 @@ module.exports = function makeLinter({promisedOptions}) {
             })
             .then(function lintAndAdaptWarnings({cliEngine, file}) {
                 // eslint-disable-next-line prefer-destructuring
-                const {messages} = cliEngine.executeOnText(file).results[0];
+                const {messages} = cliEngine
+                    .executeOnText(file, fileName)
+                    .results[0];
 
                 return {
                     linterName: "ESLint",
