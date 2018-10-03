@@ -1,6 +1,6 @@
 {
     "name": "lints",
-    "version": "17.0.0",
+    "version": "17.0.1",
     "description": "Lint all your JavaScript, CSS, HTML, Markdown and Dockerfiles with a single command",
     "keywords": [
         "lint",
