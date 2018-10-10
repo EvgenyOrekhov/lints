@@ -22,10 +22,13 @@ module.exports = function makeLinter({promisedOptions}) {
                 file: promisedFile
             })
             .then(function lintAndAdaptWarnings({cliEngine, file}) {
-                // eslint-disable-next-line prefer-destructuring
-                const {messages} = cliEngine
-                    .executeOnText(file, fileName)
-                    .results[0];
+                const report = cliEngine.executeOnText(file, fileName);
+
+                const messages = R.pathOr(
+                    [],
+                    ["results", 0, "messages"],
+                    report
+                );
 
                 return {
                     linterName: "ESLint",

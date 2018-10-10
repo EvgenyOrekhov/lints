@@ -92,3 +92,23 @@ test("eslint", function (t) {
         )
     );
 });
+
+test("eslint", function (t) {
+    const lint = makeLinter({
+        promisedOptions: Promise.resolve()
+    });
+
+    return lint({
+        promisedFile: Promise.resolve(""),
+        fileName: ".abc.js"
+    }).then(
+        (result) => t.strictSame(
+            result,
+            {
+                linterName: "ESLint",
+                warnings: []
+            },
+            "should not crash if file name begins with a dot"
+        )
+    );
+});
