@@ -1,4 +1,4 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 /*eslint "func-names": "off", "no-magic-numbers": "off" */
 
 "use strict";

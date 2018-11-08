@@ -1,4 +1,4 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 
 "use strict";
 
