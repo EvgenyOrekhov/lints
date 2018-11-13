@@ -5,15 +5,13 @@
 const jshint = require("jshint").JSHINT;
 
 const Bluebird = require("bluebird");
+const R = require("ramda");
 
 module.exports = function makeLinter({promisedOptions}) {
     return function lint({promisedFile}) {
-        return Bluebird
-            .props({
-                options: promisedOptions,
-                file: promisedFile
-            })
-            .then(function lintAndAdaptWarnings({options, file}) {
+        return R.pipeP(
+            Bluebird.props,
+            function lintAndAdaptWarnings({options, file}) {
                 jshint(file, options);
 
                 return {
@@ -32,6 +30,10 @@ module.exports = function makeLinter({promisedOptions}) {
                         };
                     })
                 };
-            });
+            }
+        )({
+            options: promisedOptions,
+            file: promisedFile
+        });
     };
 };

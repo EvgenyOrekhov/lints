@@ -20,15 +20,13 @@ module.exports = R.evolve({
 
             return R.merge(linterConfig, {
                 promisedRcFile: promisedRcFile.catch(() => undefined),
-                promisedOptions: promisedRcFile
-                    .then(function parse(rcFile) {
-                        try {
-                            return JSON.parse(rcFile);
-                        } catch (ignore) {
-                            return jsYaml.safeLoad(rcFile);
-                        }
-                    })
-                    .catch(() => undefined)
+                promisedOptions: promisedRcFile.then(function parse(rcFile) {
+                    try {
+                        return JSON.parse(rcFile);
+                    } catch (ignore) {
+                        return jsYaml.safeLoad(rcFile);
+                    }
+                }).catch(() => undefined)
             });
         }
     )

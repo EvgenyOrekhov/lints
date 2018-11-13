@@ -18,26 +18,27 @@ module.exports = function cli({
     log,
     lintersDirectory
 }) {
-    return fs
-        .readFileAsync(rcFile, "utf8")
-        .catch(
-            () => fs.readFileAsync(`${__dirname}/default.lints.json`, "utf8")
-        )
-        .then(JSON.parse)
-        .then((config) => lints(config, lintersDirectory))
-        .then(report)
-        .tap(
-            R.pipe(prettyPrintReport, log)
-        )
-        .then(function setAndReturnExitCode({numbers}) {
-            process.exitCode = Number(numbers.totalWarnings > 0);
+    return fs.readFileAsync(
+        rcFile,
+        "utf8"
+    ).catch(
+        () => fs.readFileAsync(`${__dirname}/default.lints.json`, "utf8")
+    ).then(
+        JSON.parse
+    ).then(
+        (config) => lints(config, lintersDirectory)
+    ).then(
+        report
+    ).tap(
+        R.pipe(prettyPrintReport, log)
+    ).then(function setAndReturnExitCode({numbers}) {
+        process.exitCode = Number(numbers.totalWarnings > 0);
 
-            return process.exitCode;
-        })
-        .catch(function setExitCodeTo1AndRethrowError(err) {
-            process.exitCode = 1;
+        return process.exitCode;
+    }).catch(function setExitCodeTo1AndRethrowError(err) {
+        process.exitCode = 1;
 
-            // eslint-disable-next-line fp/no-throw
-            throw err;
-        });
+        // eslint-disable-next-line fp/no-throw
+        throw err;
+    });
 };

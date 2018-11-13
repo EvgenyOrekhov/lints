@@ -31,21 +31,22 @@ module.exports = function makeLinter({promisedOptions}) {
     );
 
     return function lint({promisedFile}) {
-        return Bluebird
-            .props({
-                processor: promisedProcessor,
-                file: promisedFile
-            })
-            .then(function runRemarkLint({processor, file}) {
+        return R.pipeP(
+            Bluebird.props,
+            function runRemarkLint({processor, file}) {
                 return processor.process(file);
-            })
-            .then(function adaptWarnings({messages}) {
+            },
+            function adaptWarnings({messages}) {
                 return {
                     linterName: "remark-lint",
                     warnings: messages.map(
                         R.pick(["line", "column", "message", "ruleId"])
                     )
                 };
-            });
+            }
+        )({
+            processor: promisedProcessor,
+            file: promisedFile
+        });
     };
 };

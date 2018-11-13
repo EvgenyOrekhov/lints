@@ -10,13 +10,12 @@ module.exports = function makeLinter({
     promisedRcFile
 }) {
     return function lint({fileName, promisedFile}) {
-        return Bluebird
-            .props({
-                rcFile,
-                options: promisedOptions,
-                rcFileContents: promisedRcFile,
-                fileName,
-                file: promisedFile
-            });
+        return Bluebird.props({
+            rcFile,
+            options: promisedOptions,
+            rcFileContents: promisedRcFile,
+            fileName,
+            file: promisedFile
+        });
     };
 };

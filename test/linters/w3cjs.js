@@ -46,10 +46,9 @@ test("w3cjs", function (t) {
 });
 
 test("w3cjs", function (t) {
-    nock("http://validator.w3.org")
-        .filteringPath(() => "/")
-        .post("/")
-        .replyWithError("Error message");
+    nock(
+        "http://validator.w3.org"
+    ).filteringPath(() => "/").post("/").replyWithError("Error message");
 
     t.tearDown(() => nock.cleanAll());
 
