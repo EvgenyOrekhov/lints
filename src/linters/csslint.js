@@ -1,19 +1,17 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 
 "use strict";
 
 const csslint = require("csslint").CSSLint;
 
 const Bluebird = require("bluebird");
+const R = require("ramda");
 
 module.exports = function makeLinter({promisedOptions}) {
     return function lint({promisedFile}) {
-        return Bluebird
-            .props({
-                options: promisedOptions,
-                file: promisedFile
-            })
-            .then(function lintAndAdaptWarnings({options, file}) {
+        return R.pipeP(
+            Bluebird.props,
+            function lintAndAdaptWarnings({options, file}) {
                 const {messages} = csslint.verify(file, options);
 
                 return {
@@ -32,6 +30,10 @@ module.exports = function makeLinter({promisedOptions}) {
                         };
                     })
                 };
-            });
+            }
+        )({
+            options: promisedOptions,
+            file: promisedFile
+        });
     };
 };

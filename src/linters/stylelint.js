@@ -1,4 +1,4 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 
 "use strict";
 
@@ -30,19 +30,16 @@ module.exports = function makeLinter({promisedOptions}) {
     );
 
     return function lint({promisedFile, fileName}) {
-        return Bluebird
-            .props({
-                options: promisedResolvedOptions,
-                file: promisedFile
-            })
-            .then(function runStylelint({options, file}) {
+        return R.pipeP(
+            Bluebird.props,
+            function runStylelint({options, file}) {
                 return stylelint.lint({
                     code: file,
                     codeFilename: fileName,
                     config: options
                 });
-            })
-            .then(function adaptWarnings({results}) {
+            },
+            function adaptWarnings({results}) {
                 return {
                     linterName: "stylelint",
                     warnings: results[0].warnings.map(
@@ -61,6 +58,10 @@ module.exports = function makeLinter({promisedOptions}) {
                         }
                     )
                 };
-            });
+            }
+        )({
+            options: promisedResolvedOptions,
+            file: promisedFile
+        });
     };
 };

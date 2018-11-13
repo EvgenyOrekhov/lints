@@ -1,4 +1,4 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 
 "use strict";
 
@@ -14,9 +14,11 @@ module.exports = function prettyPrintSummary({numbers, usedLinters}) {
         return "Nothing to check\n";
     }
 
-    const color = numbers.totalWarnings > 0
+    const color = (
+        numbers.totalWarnings > 0
         ? chalk.red
-        : chalk.green;
+        : chalk.green
+    );
 
     const totalWarningsMessage = color(
         `Total warnings: ${numbers.totalWarnings}`

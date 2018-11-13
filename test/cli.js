@@ -1,4 +1,4 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 /*eslint "func-names": "off", "no-magic-numbers": "off" */
 
 "use strict";
@@ -32,14 +32,13 @@ Total warnings: 1
         rcFile: "test/stubs/.lints.json",
         log,
         lintersDirectory: "./linters/"
-    })
-        // eslint-disable-next-line promise/always-return
-        .then(function (exitCode) {
-            t.strictSame(exitCode, 1);
-            t.strictSame(process.exitCode, 1);
+    // eslint-disable-next-line promise/always-return
+    }).then(function (exitCode) {
+        t.strictSame(exitCode, 1);
+        t.strictSame(process.exitCode, 1);
 
-            process.exitCode = 0;
-        });
+        process.exitCode = 0;
+    });
 });
 
 test("cli()", function (t) {
@@ -54,12 +53,11 @@ test("cli()", function (t) {
         rcFile: "test/stubs/.lints.json",
         log,
         lintersDirectory: "./linters/"
-    })
-        .catch(function () {
-            t.strictSame(process.exitCode, 1);
+    }).catch(function () {
+        t.strictSame(process.exitCode, 1);
 
-            process.exitCode = 0;
-        });
+        process.exitCode = 0;
+    });
 });
 
 test("cli()", function (t) {
@@ -77,12 +75,11 @@ test("cli()", function (t) {
         rcFile: "test/stubs/.lints-nothing-to-check.json",
         log,
         lintersDirectory: "./linters/"
-    })
-        // eslint-disable-next-line promise/always-return
-        .then(function (exitCode) {
-            t.strictSame(exitCode, 0);
-            t.strictSame(process.exitCode, 0);
-        });
+    // eslint-disable-next-line promise/always-return
+    }).then(function (exitCode) {
+        t.strictSame(exitCode, 0);
+        t.strictSame(process.exitCode, 0);
+    });
 });
 
 test("cli()", function (t) {
@@ -101,12 +98,11 @@ test("cli()", function (t) {
         rcFile: "nonexistent",
         log,
         lintersDirectory: "./linters/"
-    })
-        // eslint-disable-next-line promise/always-return
-        .then(function (exitCode) {
-            t.strictSame(exitCode, 1);
-            t.strictSame(process.exitCode, 1);
+    // eslint-disable-next-line promise/always-return
+    }).then(function (exitCode) {
+        t.strictSame(exitCode, 1);
+        t.strictSame(process.exitCode, 1);
 
-            process.exitCode = 0;
-        });
+        process.exitCode = 0;
+    });
 });

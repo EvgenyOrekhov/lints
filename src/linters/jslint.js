@@ -1,20 +1,20 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 
 "use strict";
 
-const {jslint} = require("jslinter");
+const jslint = require("jslint-node");
 
 const Bluebird = require("bluebird");
+const R = require("ramda");
 
 module.exports = function makeLinter({promisedOptions}) {
+    const promisedLinter = jslint();
+
     return function lint({promisedFile}) {
-        return Bluebird
-            .props({
-                options: promisedOptions,
-                file: promisedFile
-            })
-            .then(function lintAndAdaptWarnings({options, file}) {
-                const {warnings} = jslint(file, options);
+        return R.pipeP(
+            Bluebird.props,
+            function lintAndAdaptWarnings({options, file, linter}) {
+                const {warnings} = linter.jslint(file, options);
 
                 return {
                     linterName: "JSLint",
@@ -32,6 +32,11 @@ module.exports = function makeLinter({promisedOptions}) {
                         };
                     })
                 };
-            });
+            }
+        )({
+            options: promisedOptions,
+            file: promisedFile,
+            linter: promisedLinter
+        });
     };
 };

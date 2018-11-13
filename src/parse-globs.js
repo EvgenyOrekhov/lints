@@ -1,4 +1,4 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 
 "use strict";
 
@@ -24,16 +24,14 @@ module.exports = function parseGlobs(config) {
         linterConfigs
     );
 
-    return Bluebird
-        .props(promisedFiles)
-        .then(
-            (files) => R.mapObjIndexed(
-                (linterConfig, linterName) => R.assoc(
-                    "files",
-                    files[linterName],
-                    linterConfig
-                ),
-                linterConfigs
-            )
-        );
+    return Bluebird.props(promisedFiles).then(
+        (files) => R.mapObjIndexed(
+            (linterConfig, linterName) => R.assoc(
+                "files",
+                files[linterName],
+                linterConfig
+            ),
+            linterConfigs
+        )
+    );
 };

@@ -1,4 +1,4 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 
 "use strict";
 
@@ -10,13 +10,12 @@ module.exports = function makeLinter({
     promisedRcFile
 }) {
     return function lint({fileName, promisedFile}) {
-        return Bluebird
-            .props({
-                rcFile,
-                options: promisedOptions,
-                rcFileContents: promisedRcFile,
-                fileName,
-                file: promisedFile
-            });
+        return Bluebird.props({
+            rcFile,
+            options: promisedOptions,
+            rcFileContents: promisedRcFile,
+            fileName,
+            file: promisedFile
+        });
     };
 };

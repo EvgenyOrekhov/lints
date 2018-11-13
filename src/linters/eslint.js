@@ -1,4 +1,4 @@
-/*jslint node, maxlen: 80 */
+/*jslint node */
 
 "use strict";
 
@@ -16,12 +16,9 @@ module.exports = function makeLinter({promisedOptions}) {
     );
 
     return function lint({promisedFile, fileName}) {
-        return Bluebird
-            .props({
-                cliEngine: promisedCliEngine,
-                file: promisedFile
-            })
-            .then(function lintAndAdaptWarnings({cliEngine, file}) {
+        return R.pipeP(
+            Bluebird.props,
+            function lintAndAdaptWarnings({cliEngine, file}) {
                 const report = cliEngine.executeOnText(file, fileName);
 
                 const messages = R.pathOr(
@@ -36,6 +33,10 @@ module.exports = function makeLinter({promisedOptions}) {
                         R.pick(["line", "column", "message", "ruleId"])
                     )
                 };
-            });
+            }
+        )({
+            cliEngine: promisedCliEngine,
+            file: promisedFile
+        });
     };
 };
