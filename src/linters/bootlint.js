@@ -7,9 +7,11 @@ const bootlint = require("bootlint");
 const Bluebird = require("bluebird");
 const R = require("ramda");
 
+const {pipeP} = require("../util");
+
 module.exports = function makeLinter({promisedOptions}) {
     return function lint({promisedFile}) {
-        return R.pipeP(
+        return pipeP([
             Bluebird.props,
             function lintAndAdaptWarnings({options, file}) {
                 const defaultedOptions = R.defaultTo([], options);
@@ -48,7 +50,7 @@ module.exports = function makeLinter({promisedOptions}) {
                     })
                 };
             }
-        )({
+        ])({
             options: promisedOptions,
             file: promisedFile
         });

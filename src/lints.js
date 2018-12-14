@@ -10,15 +10,17 @@ const groupByFiles = require("./group-by-files");
 const promiseOptions = require("./promise-options");
 const promiseFiles = require("./promise-files");
 
-const promiseConfig = R.pipeP(
+const {pipeP} = require("./util");
+
+const promiseConfig = pipeP([
     parseGlobs,
     groupByFiles,
     promiseOptions,
     promiseFiles
-);
+]);
 
 module.exports = function lints(config, lintersDirectory) {
-    return R.pipeP(
+    return pipeP([
         promiseConfig,
         function instantiateAndRunLinters({
             fileLinters,
@@ -50,5 +52,5 @@ module.exports = function lints(config, lintersDirectory) {
             );
         },
         Bluebird.props
-    )(config);
+    ])(config);
 };

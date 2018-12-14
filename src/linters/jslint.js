@@ -5,13 +5,14 @@
 const jslint = require("jslint-node");
 
 const Bluebird = require("bluebird");
-const R = require("ramda");
+
+const {pipeP} = require("../util");
 
 module.exports = function makeLinter({promisedOptions}) {
     const promisedLinter = jslint();
 
     return function lint({promisedFile}) {
-        return R.pipeP(
+        return pipeP([
             Bluebird.props,
             function lintAndAdaptWarnings({options, file, linter}) {
                 const {warnings} = linter.jslint(file, options);
@@ -33,7 +34,7 @@ module.exports = function makeLinter({promisedOptions}) {
                     })
                 };
             }
-        )({
+        ])({
             options: promisedOptions,
             file: promisedFile,
             linter: promisedLinter

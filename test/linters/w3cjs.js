@@ -34,8 +34,10 @@ test("w3cjs", function (t) {
                     {
                         line: 5,
                         column: 15,
-                        message: "Element “head” is missing a required "
-                                + "instance of child element “title”.",
+                        message: (
+                            "Element “head” is missing a required "
+                            + "instance of child element “title”."
+                        ),
                         ruleId: "error"
                     }
                 ]

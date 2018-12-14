@@ -11,7 +11,7 @@ module.exports = R.evolve({
                 R.is(String),
                 R.of
             ),
-            R.adjust(require, 0)
+            R.adjust(0, require)
         )
     )
 });

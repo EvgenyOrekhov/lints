@@ -18,7 +18,7 @@ module.exports = R.evolve({
                 "utf8"
             );
 
-            return R.merge(linterConfig, {
+            return R.mergeRight(linterConfig, {
                 promisedRcFile: promisedRcFile.catch(() => undefined),
                 promisedOptions: promisedRcFile.then(function parse(rcFile) {
                     try {

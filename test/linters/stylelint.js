@@ -120,8 +120,10 @@ test("stylelint", function (t) {
                     }
                 ]
             },
-            "should not use stylelint-config-standard if the \"extends\" "
-                    + "property is not defined"
+            (
+                "should not use stylelint-config-standard if the \"extends\" "
+                + "property is not defined"
+            )
         )
     );
 });

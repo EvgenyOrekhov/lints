@@ -88,8 +88,10 @@ test("cli()", function (t) {
     function log(result) {
         return t.match(
             result,
-            "Used linters: JSLint, JSHint, ESLint, dockerfilelint, "
-                    + "markdownlint,\nremark-lint",
+            (
+                "Used linters: JSLint, JSHint, ESLint, dockerfilelint, "
+                + "markdownlint,\nremark-lint"
+            ),
             "should use default.lints.json if .lints.json is not found"
         );
     }

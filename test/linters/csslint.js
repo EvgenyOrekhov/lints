@@ -60,8 +60,10 @@ a {font-size: 0;}
                     {
                         line: 0,
                         column: 0,
-                        message: "Too many font-size declarations (10), "
-                                + "abstraction needed.",
+                        message: (
+                            "Too many font-size declarations (10), "
+                            + "abstraction needed."
+                        ),
                         ruleId: "font-sizes"
                     }
                 ]

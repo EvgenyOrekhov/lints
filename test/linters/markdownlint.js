@@ -23,8 +23,10 @@ test("markdownlint", function (t) {
                     {
                         line: 1,
                         column: 0,
-                        message: "First line in file should be a top level "
-                                + "heading",
+                        message: (
+                            "First line in file should be a top level "
+                            + "heading"
+                        ),
                         ruleId: "first-line-h1"
                     }
                 ]
@@ -52,8 +54,10 @@ test("markdownlint", function (t) {
                     {
                         line: 3,
                         column: 0,
-                        message: "Multiple consecutive blank lines "
-                                + "(Expected: 1; Actual: 2)",
+                        message: (
+                            "Multiple consecutive blank lines "
+                            + "(Expected: 1; Actual: 2)"
+                        ),
                         ruleId: "no-multiple-blanks"
                     }
                 ]

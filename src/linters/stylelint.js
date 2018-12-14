@@ -7,6 +7,8 @@ const stylelint = require("stylelint");
 const Bluebird = require("bluebird");
 const R = require("ramda");
 
+const {pipeP} = require("../util");
+
 module.exports = function makeLinter({promisedOptions}) {
     const promisedResolvedOptions = promisedOptions.then(
         R.pipe(
@@ -30,7 +32,7 @@ module.exports = function makeLinter({promisedOptions}) {
     );
 
     return function lint({promisedFile, fileName}) {
-        return R.pipeP(
+        return pipeP([
             Bluebird.props,
             function runStylelint({options, file}) {
                 return stylelint.lint({
@@ -59,7 +61,7 @@ module.exports = function makeLinter({promisedOptions}) {
                     )
                 };
             }
-        )({
+        ])({
             options: promisedResolvedOptions,
             file: promisedFile
         });

@@ -157,16 +157,20 @@ test("promiseOptions()", function (t) {
             (rcFileContents) => t.strictSame(
                 rcFileContents,
                 undefined,
-                "should resolve to undefined if the \"rcFile\" option is "
-                        + "undefined"
+                (
+                    "should resolve to undefined if the \"rcFile\" option is "
+                    + "undefined"
+                )
             )
         ),
         result.linterConfigs.linter.promisedOptions.then(
             (options) => t.strictSame(
                 options,
                 undefined,
-                "should resolve to undefined if the \"rcFile\" option is "
-                        + "undefined"
+                (
+                    "should resolve to undefined if the \"rcFile\" option is "
+                    + "undefined"
+                )
             )
         )
     ]);

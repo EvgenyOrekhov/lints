@@ -5,11 +5,12 @@
 const htmlhint = require("htmlhint").HTMLHint;
 
 const Bluebird = require("bluebird");
-const R = require("ramda");
+
+const {pipeP} = require("../util");
 
 module.exports = function makeLinter({promisedOptions}) {
     return function lint({promisedFile}) {
-        return R.pipeP(
+        return pipeP([
             Bluebird.props,
             function lintAndAdaptWarnings({options, file}) {
                 const warnings = htmlhint.verify(file, options);
@@ -31,7 +32,7 @@ module.exports = function makeLinter({promisedOptions}) {
                     })
                 };
             }
-        )({
+        ])({
             options: promisedOptions,
             file: promisedFile
         });

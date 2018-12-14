@@ -5,7 +5,8 @@
 const markdownlint = require("markdownlint");
 
 const Bluebird = require("bluebird");
-const R = require("ramda");
+
+const {pipeP} = require("../util");
 
 const markdownlintAsync = Bluebird.promisify(markdownlint);
 
@@ -13,7 +14,7 @@ const indexOfRuleAlias = 1;
 
 module.exports = function makeLinter({promisedOptions}) {
     return function lint({promisedFile}) {
-        return R.pipeP(
+        return pipeP([
             Bluebird.props,
             function runMarkdownlint({options, file}) {
                 return markdownlintAsync({
@@ -43,7 +44,7 @@ module.exports = function makeLinter({promisedOptions}) {
                     })
                 };
             }
-        )({
+        ])({
             options: promisedOptions,
             file: promisedFile
         });

@@ -37,18 +37,22 @@ test("bootlint", function (t) {
                     {
                         line: 8,
                         column: 12,
-                        message: "Incorrect markup used with the `.checkbox` "
-                                + "class. The correct markup structure is "
-                                + "`.checkbox>label>input[type=\"checkbox\"]`",
+                        message: (
+                            "Incorrect markup used with the `.checkbox` "
+                            + "class. The correct markup structure is "
+                            + "`.checkbox>label>input[type=\"checkbox\"]`"
+                        ),
                         ruleId: "E017"
                     },
                     {
                         line: 0,
                         column: 0,
-                        message: "Unable to locate jQuery, which is required "
-                                + "for Bootstrap's JavaScript plugins to work; "
-                                + "however, you might not be using Bootstrap's "
-                                + "JavaScript",
+                        message: (
+                            "Unable to locate jQuery, which is required "
+                            + "for Bootstrap's JavaScript plugins to work; "
+                            + "however, you might not be using Bootstrap's "
+                            + "JavaScript"
+                        ),
                         ruleId: "W005"
                     }
                 ]
@@ -74,9 +78,11 @@ test("bootlint", function (t) {
                     {
                         line: 8,
                         column: 12,
-                        message: "Incorrect markup used with the `.checkbox` "
-                                + "class. The correct markup structure is "
-                                + "`.checkbox>label>input[type=\"checkbox\"]`",
+                        message: (
+                            "Incorrect markup used with the `.checkbox` "
+                            + "class. The correct markup structure is "
+                            + "`.checkbox>label>input[type=\"checkbox\"]`"
+                        ),
                         ruleId: "E017"
                     }
                 ]

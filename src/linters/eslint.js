@@ -7,6 +7,8 @@ const {CLIEngine} = require("eslint");
 const Bluebird = require("bluebird");
 const R = require("ramda");
 
+const {pipeP} = require("../util");
+
 module.exports = function makeLinter({promisedOptions}) {
     const promisedCliEngine = promisedOptions.then(
         (options) => new CLIEngine({
@@ -16,7 +18,7 @@ module.exports = function makeLinter({promisedOptions}) {
     );
 
     return function lint({promisedFile, fileName}) {
-        return R.pipeP(
+        return pipeP([
             Bluebird.props,
             function lintAndAdaptWarnings({cliEngine, file}) {
                 const report = cliEngine.executeOnText(file, fileName);
@@ -34,7 +36,7 @@ module.exports = function makeLinter({promisedOptions}) {
                     )
                 };
             }
-        )({
+        ])({
             cliEngine: promisedCliEngine,
             file: promisedFile
         });

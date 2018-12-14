@@ -10,6 +10,8 @@ const R = require("ramda");
 
 const prepareOptions = require("./prepare-options");
 
+const {pipeP} = require("../../util");
+
 module.exports = function makeLinter({promisedOptions}) {
     const promisedProcessor = promisedOptions.then(
         R.pipe(
@@ -31,7 +33,7 @@ module.exports = function makeLinter({promisedOptions}) {
     );
 
     return function lint({promisedFile}) {
-        return R.pipeP(
+        return pipeP([
             Bluebird.props,
             function runRemarkLint({processor, file}) {
                 return processor.process(file);
@@ -44,7 +46,7 @@ module.exports = function makeLinter({promisedOptions}) {
                     )
                 };
             }
-        )({
+        ])({
             processor: promisedProcessor,
             file: promisedFile
         });
