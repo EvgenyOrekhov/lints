@@ -59,7 +59,7 @@
         "chalk": "^2.4.1",
         "csslint": "^1.0.5",
         "dockerfilelint": "^1.4.0",
-        "eslint": "^5.10.0",
+        "eslint": "^5.11.0",
         "globby": "^8.0.1",
         "htmlhint": "^0.10.1",
         "js-yaml": "^3.12.0",
@@ -82,9 +82,9 @@
     ],
     "devDependencies": {
         "ansi-styles": "^3.2.1",
-        "eslint-config-hardcore-fp": "^5.1.0",
+        "eslint-config-hardcore-fp": "^5.2.0",
         "eslint-plugin-import": "^2.14.0",
-        "nock": "^10.0.4",
+        "nock": "^10.0.5",
         "tap": "^12.1.1"
     }
 }
