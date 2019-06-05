@@ -61,7 +61,7 @@
         "dockerfilelint": "^1.5.0",
         "eslint": "^5.16.0",
         "globby": "^9.2.0",
-        "htmlhint": "^0.10.3",
+        "htmlhint": "^0.11.0",
         "js-yaml": "^3.13.1",
         "jshint": "^2.10.2",
         "jslint-node": "^1.2.8",

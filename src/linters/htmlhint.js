@@ -2,7 +2,7 @@
 
 "use strict";
 
-const htmlhint = require("htmlhint").HTMLHint;
+const htmlhint = require("htmlhint").default;
 
 const Bluebird = require("bluebird");
 
