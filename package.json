@@ -65,7 +65,7 @@
         "js-yaml": "^3.13.1",
         "jshint": "^2.10.2",
         "jslint-node": "^1.2.8",
-        "markdownlint": "^0.12.0",
+        "markdownlint": "^0.14.2",
         "ramda": "^0.26.1",
         "remark": "^10.0.1",
         "remark-lint": "^6.0.4",

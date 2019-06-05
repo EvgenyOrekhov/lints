@@ -13,7 +13,7 @@ test("markdownlint", function (t) {
     });
 
     return lint({
-        promisedFile: Promise.resolve("a")
+        promisedFile: Promise.resolve("a\n")
     }).then(
         (result) => t.strictSame(
             result,
@@ -27,7 +27,7 @@ test("markdownlint", function (t) {
                             "First line in file should be a top level "
                             + "heading"
                         ),
-                        ruleId: "first-line-h1"
+                        ruleId: "first-line-heading"
                     }
                 ]
             },
