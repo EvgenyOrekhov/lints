@@ -60,7 +60,7 @@
         "csslint": "^1.0.5",
         "dockerfilelint": "^1.5.0",
         "eslint": "^6.0.1",
-        "globby": "^9.2.0",
+        "globby": "^10.0.1",
         "htmlhint": "^0.11.0",
         "js-yaml": "^3.13.1",
         "jshint": "^2.10.2",
