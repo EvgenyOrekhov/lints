@@ -3,7 +3,6 @@
 "use strict";
 
 const {CLIEngine} = require("eslint");
-
 const Bluebird = require("bluebird");
 const R = require("ramda");
 

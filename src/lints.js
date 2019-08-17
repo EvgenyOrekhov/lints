@@ -9,7 +9,6 @@ const parseGlobs = require("./parse-globs");
 const groupByFiles = require("./group-by-files");
 const promiseOptions = require("./promise-options");
 const promiseFiles = require("./promise-files");
-
 const {pipeP} = require("./util");
 
 const promiseConfig = pipeP([
@@ -33,6 +32,7 @@ module.exports = function lints(config, lintersDirectory) {
                 security/detect-non-literal-require
             */
             const linters = R.mapObjIndexed(
+                // eslint-disable-next-line import/no-dynamic-require
                 (linterConfig, linterName) => require(
                     lintersDirectory + linterName
                 )(linterConfig),

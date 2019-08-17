@@ -3,7 +3,6 @@
 "use strict";
 
 const jslint = require("jslint-node");
-
 const Bluebird = require("bluebird");
 
 const {pipeP} = require("../util");

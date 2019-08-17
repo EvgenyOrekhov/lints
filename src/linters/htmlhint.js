@@ -3,7 +3,6 @@
 "use strict";
 
 const htmlhint = require("htmlhint").default;
-
 const Bluebird = require("bluebird");
 
 const {pipeP} = require("../util");

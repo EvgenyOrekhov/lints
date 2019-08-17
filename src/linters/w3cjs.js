@@ -3,7 +3,6 @@
 "use strict";
 
 const w3cjs = require("w3cjs");
-
 const Bluebird = require("bluebird");
 
 module.exports = function makeLinter() {

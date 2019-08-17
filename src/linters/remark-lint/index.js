@@ -4,13 +4,12 @@
 
 const remark = require("remark");
 const remarkLint = require("remark-lint");
-
 const Bluebird = require("bluebird");
 const R = require("ramda");
 
-const prepareOptions = require("./prepare-options");
-
 const {pipeP} = require("../../util");
+
+const prepareOptions = require("./prepare-options");
 
 module.exports = function makeLinter({promisedOptions}) {
     const promisedProcessor = promisedOptions.then(

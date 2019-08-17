@@ -3,7 +3,6 @@
 "use strict";
 
 const bootlint = require("bootlint");
-
 const Bluebird = require("bluebird");
 const R = require("ramda");
 

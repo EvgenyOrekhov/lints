@@ -4,7 +4,6 @@
 "use strict";
 
 const {test} = require("tap");
-
 const chalk = require("chalk");
 const ansiStyles = require("ansi-styles");
 

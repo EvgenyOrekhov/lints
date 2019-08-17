@@ -3,7 +3,6 @@
 "use strict";
 
 const jshint = require("jshint").JSHINT;
-
 const Bluebird = require("bluebird");
 
 const {pipeP} = require("../util");

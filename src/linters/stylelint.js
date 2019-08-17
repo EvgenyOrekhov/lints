@@ -3,7 +3,6 @@
 "use strict";
 
 const stylelint = require("stylelint");
-
 const Bluebird = require("bluebird");
 const R = require("ramda");
 

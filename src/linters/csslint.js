@@ -3,7 +3,6 @@
 "use strict";
 
 const csslint = require("csslint").CSSLint;
-
 const Bluebird = require("bluebird");
 
 const {pipeP} = require("../util");

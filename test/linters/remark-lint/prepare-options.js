@@ -4,7 +4,6 @@
 "use strict";
 
 const {test} = require("tap");
-
 const consistentPreset = require("remark-preset-lint-consistent");
 const recommendedPreset = require("remark-preset-lint-recommended");
 const listItemIndentRule = require("remark-lint-list-item-indent");

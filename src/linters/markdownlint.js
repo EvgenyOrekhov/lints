@@ -3,7 +3,6 @@
 "use strict";
 
 const markdownlint = require("markdownlint");
-
 const Bluebird = require("bluebird");
 
 const {pipeP} = require("../util");
