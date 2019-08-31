@@ -104,7 +104,8 @@
             "error",
             "always",
             {
-                "js": "never"
+                "js": "never",
+                "mjs": "never"
             }
         ],
         "import/order": [
