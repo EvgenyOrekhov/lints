@@ -46,7 +46,7 @@ test("cli()", function (t) {
 
     function log() {
         // eslint-disable-next-line fp/no-throw
-        throw new Error();
+        throw new Error("Mock error");
     }
 
     return cli({

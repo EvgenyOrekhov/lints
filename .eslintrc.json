@@ -1,16 +1,5 @@
 {
-    "plugins": [
-        "import"
-    ],
-
-    "extends": [
-        "hardcore-fp",
-        "plugin:import/recommended"
-    ],
-
-    "parserOptions": {
-        "sourceType": "script"
-    },
+    "extends": "hardcore-fp",
 
     "env": {
         "node": true
@@ -42,102 +31,6 @@
                     }
                 ]
             }
-        ],
-
-        "import/no-unresolved": [
-            "error",
-            {
-                "commonjs": true
-            }
-        ],
-        "import/named": "error",
-        "import/default": "error",
-        "import/namespace": "error",
-        "import/no-absolute-path": "error",
-        "import/no-dynamic-require": "error",
-        "import/no-webpack-loader-syntax": "error",
-        "import/no-self-import": "error",
-        "import/no-cycle": [
-            "error",
-            {
-                "commonjs": true
-            }
-        ],
-        "import/no-useless-path-segments": [
-            "error",
-            {
-                "noUselessIndex": true
-            }
-        ],
-        "import/no-unused-modules": [
-            "error",
-            {
-                "missingExports": false,
-                "unusedExports": true
-            }
-        ],
-        "import/export": "error",
-        "import/no-named-as-default": "error",
-        "import/no-named-as-default-member": "error",
-        "import/no-deprecated": "error",
-        "import/no-extraneous-dependencies": [
-            "error",
-            {
-                "devDependencies": [
-                    "test/**",
-                    "tests/**",
-                    "**/*.test.js",
-                    "**/*.spec.js"
-                ],
-                "optionalDependencies": false,
-                "peerDependencies": false
-            }
-        ],
-        "import/no-mutable-exports": "error",
-        "import/unambiguous": "error",
-        "import/no-amd": "error",
-        "import/first": "error",
-        "import/exports-last": "error",
-        "import/no-duplicates": "error",
-        "import/no-namespace": "error",
-        "import/extensions": [
-            "error",
-            "always",
-            {
-                "js": "never",
-                "mjs": "never"
-            }
-        ],
-        "import/order": [
-            "error",
-            {
-                "groups": [
-                    "builtin",
-                    "external",
-                    "internal",
-                    "unknown",
-                    "parent",
-                    "sibling",
-                    "index"
-                ],
-                "newlines-between": "always"
-            }
-        ],
-        "import/newline-after-import": "error",
-        "import/prefer-default-export": "error",
-        "import/max-dependencies": "error",
-        "import/no-unassigned-import": "error",
-        "import/no-named-default": "error",
-        "import/no-anonymous-default-export": "error",
-        "import/group-exports": "error",
-
-        "import/no-restricted-paths": "off",
-        "import/no-internal-modules": "off",
-        "import/no-relative-parent-imports": "off",
-        "import/no-commonjs": "off",
-        "import/no-nodejs-modules": "off",
-        "import/no-default-export": "off",
-        "import/no-named-export": "off",
-        "dynamic-import-chunkname": "off"
+        ]
     }
 }
