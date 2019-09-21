@@ -44,14 +44,12 @@ Total warnings: 1
 test("cli()", function (t) {
     t.plan(1);
 
-    function log() {
-        // eslint-disable-next-line fp/no-throw
-        throw new Error("Mock error");
-    }
-
     return cli({
         rcFile: "test/stubs/.lints.json",
-        log,
+        log() {
+            // eslint-disable-next-line fp/no-throw
+            throw new Error("Mock error");
+        },
         lintersDirectory: "./linters/"
     }).catch(function () {
         t.strictSame(process.exitCode, 1);
