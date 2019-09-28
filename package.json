@@ -82,7 +82,7 @@
     ],
     "devDependencies": {
         "ansi-styles": "^4.1.0",
-        "eslint-config-hardcore-fp": "^6.2.0",
+        "eslint-config-hardcore-fp": "^6.3.0",
         "nock": "^11.3.5",
         "remark-lint-list-item-indent": "^1.0.4",
         "tap": "^12.7.0"
