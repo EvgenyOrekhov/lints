@@ -7,6 +7,15 @@ const {test} = require("tap");
 
 const cli = require("../src/cli");
 
+function makeExitCodeChecker(t) {
+    return function (exitCode) {
+        t.strictSame(exitCode, 1);
+        t.strictSame(process.exitCode, 1);
+
+        process.exitCode = 0;
+    };
+}
+
 test("cli()", function (t) {
     t.plan(3);
 
@@ -32,13 +41,7 @@ Total warnings: 1
         rcFile: "test/stubs/.lints.json",
         log,
         lintersDirectory: "./linters/"
-    // eslint-disable-next-line promise/always-return
-    }).then(function (exitCode) {
-        t.strictSame(exitCode, 1);
-        t.strictSame(process.exitCode, 1);
-
-        process.exitCode = 0;
-    });
+    }).then(makeExitCodeChecker(t));
 });
 
 test("cli()", function (t) {
@@ -98,11 +101,5 @@ test("cli()", function (t) {
         rcFile: "nonexistent",
         log,
         lintersDirectory: "./linters/"
-    // eslint-disable-next-line promise/always-return
-    }).then(function (exitCode) {
-        t.strictSame(exitCode, 1);
-        t.strictSame(process.exitCode, 1);
-
-        process.exitCode = 0;
-    });
+    }).then(makeExitCodeChecker(t));
 });

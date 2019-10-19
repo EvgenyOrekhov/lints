@@ -54,7 +54,7 @@
     },
     "homepage": "https://github.com/EvgenyOrekhov/lints#readme",
     "dependencies": {
-        "bluebird": "^3.7.0",
+        "bluebird": "^3.7.1",
         "bootlint": "^0.16.7",
         "chalk": "^2.4.2",
         "csslint": "^1.0.5",
@@ -82,7 +82,7 @@
     ],
     "devDependencies": {
         "ansi-styles": "^4.1.0",
-        "eslint-config-hardcore-fp": "^6.4.0",
+        "eslint-config-hardcore-fp": "^7.0.0",
         "nock": "^11.4.0",
         "remark-lint-list-item-indent": "^1.0.4",
         "tap": "^12.7.0"
