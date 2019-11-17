@@ -86,10 +86,8 @@ Total warnings: 8
 });
 
 test("prettyPrintSummary()", function (t) {
-    /* eslint-disable fp/no-mutation */
-    chalk.enabled = true;
+    // eslint-disable-next-line fp/no-mutation
     chalk.level = basicColorSupport;
-    /* eslint-enable fp/no-mutation */
 
     const badResult = prettyPrintSummary({
         numbers: {
