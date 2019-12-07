@@ -14,7 +14,10 @@
             ".nyc_output/**",
             ".cache/**",
 
+            "build/**",
             "dist/**",
+            "out/**",
+            "tmp/**",
             "**/*.min.*"
         ]
     },
