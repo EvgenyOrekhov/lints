@@ -14,7 +14,10 @@
             ".nyc_output/**",
             ".cache/**",
 
+            "build/**",
             "dist/**",
+            "tmp/**",
+
             "**/*.min.*",
 
             "test/stubs/bad.js"
