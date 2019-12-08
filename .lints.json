@@ -41,7 +41,8 @@
 
     "eslint": {
         "files": [
-            "**/*.js"
+            "**/*.js",
+            "**/*.json"
         ],
         "ignore": [],
         "rcFile": ".eslintrc.json"
