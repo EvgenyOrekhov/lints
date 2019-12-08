@@ -8,9 +8,7 @@ function getProperty(propertyName) {
     return R.pipe(
         R.values,
         R.flatten,
-        R.map(
-            R.prop(propertyName)
-        )
+        R.pluck(propertyName)
     );
 }
 
