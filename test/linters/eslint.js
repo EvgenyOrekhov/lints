@@ -1,5 +1,5 @@
 /*jslint node */
-/*eslint "func-names": "off" */
+/*eslint-disable func-names */
 
 "use strict";
 
