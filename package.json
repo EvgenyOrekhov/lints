@@ -63,7 +63,7 @@
         "globby": "^11.0.0",
         "htmlhint": "^0.11.0",
         "js-yaml": "^3.13.1",
-        "jshint": "^2.10.3",
+        "jshint": "^2.11.0",
         "jslint-node": "^1.2.8",
         "markdownlint": "^0.18.0",
         "ramda": "^0.26.1",
