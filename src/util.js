@@ -5,5 +5,5 @@
 const R = require("ramda");
 
 module.exports = {
-    pipeP: R.pipeWith(R.then)
+    pipeP: R.pipeWith(R.andThen)
 };
