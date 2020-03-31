@@ -1,3 +1,5 @@
+<!-- markdownlint-disable single-title -->
+
 # Deprecated in favor of using the linters directly
 
 # lints
