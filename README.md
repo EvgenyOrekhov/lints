@@ -1,3 +1,5 @@
+# Deprecated in favor of using the linters directly
+
 # lints
 
 [![npm version](https://img.shields.io/npm/v/lints.svg?style=flat-square)](https://www.npmjs.com/package/lints)
