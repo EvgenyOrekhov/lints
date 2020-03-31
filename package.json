@@ -68,7 +68,7 @@
         "markdownlint": "^0.19.0",
         "ramda": "^0.27.0",
         "remark": "^11.0.2",
-        "remark-lint": "^6.0.6",
+        "remark-lint": "^7.0.0",
         "remark-preset-lint-consistent": "^2.0.4",
         "remark-preset-lint-recommended": "^3.0.4",
         "stylelint": "^13.2.1",
